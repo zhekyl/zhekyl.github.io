@@ -13,7 +13,7 @@ const SectionLink = ( {sectionTitle} ) => (
       to="/"
       state={{section: sectionTitle}}
       style={{
-        color: `white`,
+        color: `black`,
         textDecoration: `none`,
       }}
     >{sectionTitle}</Link>
@@ -23,7 +23,6 @@ const SectionLink = ( {sectionTitle} ) => (
 const Header = () => (
   <header
     style={{
-      background: `linear-gradient(rgba(255,102,102,1),rgba(255,153,153,1))`,
       marginBottom: `1.45rem`,
       position: `fixed`,
       width: `100vw`,

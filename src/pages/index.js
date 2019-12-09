@@ -13,9 +13,9 @@ const IndexPage = ({ location }) => {
 
   useEffect(() => {
     if (location.state != null) {
-      console.log(location)
-      console.log(location.state.section)
-      document.getElementById(location.state.section).scrollIntoView(true)
+      // console.log(location)
+      // console.log(location.state.section)
+      document.getElementById(location.state.section).scrollIntoView({behavior: 'smooth'})
     }
     // setSection(data.section)
   })
@@ -31,7 +31,11 @@ const IndexPage = ({ location }) => {
       <PageSection>
         <p>I'm</p>
         <h1 className={indexStyles.name}>Kyle Zheng</h1>
-        <p>a student/developer looking for .</p>
+        <div className={indexStyles.rotating}>
+          <span>a cool new project</span>
+          <span>internship opportunities</span>
+          <span>love?</span>
+        </div>
       </PageSection>
 
       <PageSection>
