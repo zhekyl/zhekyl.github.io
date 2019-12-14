@@ -1,40 +1,27 @@
-import React, { useState, useEffect } from "react"
-import { Link } from "gatsby"
+import React from "react"
 
 import indexStyles from "./index.module.css"
-import Layout from "../components/layout"
 import SEO from "../components/seo"
 import PageSection from "../components/PageSection"
 import ScrollLayout from "../components/ScrollLayout"
-import Header from "../components/Header"
+import IndexHeader from "../components/IndexHeader"
+import spin from "../images/spin.gif"
 
-const IndexPage = ({ location }) => {
-  // const [section, setSection] = useState("main")
-
-  useEffect(() => {
-    if (location.state != null) {
-      // console.log(location)
-      // console.log(location.state.section)
-      document.getElementById(location.state.section).scrollIntoView({behavior: 'smooth'})
-    }
-    // setSection(data.section)
-  })
-  // if(data.state.sectionTitle!=null){
-
-  // }
+const IndexPage = () => {
   return (
     <ScrollLayout>
-      <Header>
-
-      </Header>
+      <IndexHeader></IndexHeader>
       <SEO title="Home" />
       <PageSection>
-        <p>I'm</p>
         <h1 className={indexStyles.name}>Kyle Zheng</h1>
-        <div className={indexStyles.rotating}>
-          <span>a cool new project</span>
-          <span>internship opportunities</span>
-          <span>love?</span>
+        <div id={indexStyles.tagline}>
+          <img id={indexStyles.spin} src={spin} alt="me"></img>
+          <p>I'm a developer looking for </p>
+          <span className={indexStyles.rotating}>
+            <span>a cool new project.</span>
+            <span>internship opportunities!</span>
+            <span>love?</span>
+          </span>
         </div>
       </PageSection>
 

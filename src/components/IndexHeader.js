@@ -1,5 +1,4 @@
-import { Link } from "gatsby"
-import PropTypes from "prop-types"
+
 import React from "react"
 
 const SectionLink = ( {sectionTitle} ) => (
@@ -7,20 +6,19 @@ const SectionLink = ( {sectionTitle} ) => (
     style={{
       margin: 0,
       display: `inline-block`,
-      padding: `0.15em 2em`
+      padding: `.5em 2em`,
+      color: `black`,
+      textDecoration: `none`,
    }}>
-    <Link
-      to="/"
-      state={{section: sectionTitle}}
-      style={{
-        color: `black`,
-        textDecoration: `none`,
-      }}
-    >{sectionTitle}</Link>
+    <a
+      onClick={
+        ()=>document.getElementById(sectionTitle).scrollIntoView()
+      }
+    >{sectionTitle}</a>
   </h3>
 )
 
-const Header = () => (
+const IndexHeader = () => (
   <header
     style={{
       marginBottom: `1.45rem`,
@@ -41,4 +39,4 @@ const Header = () => (
   </header>
 )
 
-export default Header
+export default IndexHeader

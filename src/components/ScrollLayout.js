@@ -8,7 +8,7 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 
-import Header from "./Header"
+import IndexHeader from "./IndexHeader"
 import "./layout.css"
 import scrollStyles from "./ScrollLayout.module.css"
 

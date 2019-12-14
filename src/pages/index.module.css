@@ -1,20 +1,40 @@
 .name{
     font-size: 9em;
     color: crimson;
+    margin: 1em 0 .5em 1em;
+    /* text-align: center; */
+}
+
+#spin{
+    position: absolute;
+    top:-350px;
+    right: 50px;
+}
+
+#tagline{
+    margin: 2em;
     text-align: center;
+    display: flex;
+    font-size: 3em;
+    flex-wrap: wrap;
+    position: relative;
+
 }
 
 .rotating{
-    display:inline;
+    /* display:inline; */
+    text-align: center;
+    color:crimson;
 }
 
 .rotating span{
-    /* position: absolute; */
-    opacity: 0;
-}
+    animation: rotateWords 9s linear infinite 0s;  
+    position: absolute;
+    opacity: 0; 
 
-.rotating span{
-    animation: rotateWords 9s linear infinite 0s;   
+    margin-inline-start: .25em;
+    /* text-align: start; */
+    width:max-content;
 }
 
 .rotating span:nth-child(2){
@@ -25,9 +45,9 @@
 }
 
 @keyframes rotateWords {
-    0% { opacity: 1; animation-timing-function: ease-in; height: 0px; }
+    0% { opacity: 0; animation-timing-function: ease-in; height: 0px; }
     8% { opacity: 1; height: 60px; }
-    19% { opacity: 1; height: 60px; }
-	25% { opacity: 0; height: 60px; }
+    25% { opacity: 1; height: 60px; }
+	35% { opacity: 0; height: 60px; }
     100% { opacity: 0; }
 }
