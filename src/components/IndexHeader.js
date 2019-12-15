@@ -6,9 +6,10 @@ const SectionLink = ( {sectionTitle} ) => (
     style={{
       margin: 0,
       display: `inline-block`,
-      padding: `.5em 2em`,
+      padding: `.5em 1em`,
       color: `black`,
       textDecoration: `none`,
+      fontFamily:`Roboto sans-serif`,
    }}>
     <a
       onClick={
@@ -21,15 +22,15 @@ const SectionLink = ( {sectionTitle} ) => (
 const IndexHeader = () => (
   <header
     style={{
-      marginBottom: `1.45rem`,
       position: `fixed`,
-      width: `100vw`,
+      width:`100vw`,
     }}
   >
     <div
       style={{
-        margin: `0 auto`,
-        textAlign: `center`,
+        width: `75vw`,
+        textAlign: `right`,
+        margin:`0 auto`,
       }}
     >
       <SectionLink sectionTitle="about"></SectionLink>

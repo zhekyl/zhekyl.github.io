@@ -1,24 +1,16 @@
-.name{
-    font-size: 9em;
-    color: crimson;
-    margin: 1em 0 .5em 1em;
-    /* text-align: center; */
-}
 
-#spin{
-    position: absolute;
-    top:-350px;
-    right: 50px;
+.name{
+    font-size: 5em;
+    color: crimson;
+    text-align: start;
 }
 
 #tagline{
-    margin: 2em;
     text-align: center;
     display: flex;
-    font-size: 3em;
+    font-size: 2em;
     flex-wrap: wrap;
     position: relative;
-
 }
 
 .rotating{
@@ -28,13 +20,14 @@
 }
 
 .rotating span{
+    background-color: beige;
     animation: rotateWords 9s linear infinite 0s;  
     position: absolute;
     opacity: 0; 
-
     margin-inline-start: .25em;
     /* text-align: start; */
     width:max-content;
+    /* height: min-content; */
 }
 
 .rotating span:nth-child(2){
@@ -50,4 +43,23 @@
     25% { opacity: 1; height: 60px; }
 	35% { opacity: 0; height: 60px; }
     100% { opacity: 0; }
+}
+
+
+.absoluteContainer{
+    position: relative;
+}
+
+.homeContent{
+    padding:200px 0;
+    width: 75vw;
+    /* height:100vh; */
+    margin: auto;
+    text-align: start;
+}
+
+.section{
+    width: 75vw;
+    margin: auto;
+    padding:0px 1.0875rem 1.45rem;
 }
