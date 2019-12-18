@@ -1,65 +1,112 @@
-
-.name{
-    font-size: 5em;
-    color: crimson;
-    text-align: start;
+.name {
+  font-size: 5em;
+  color: lightseagreen;
+  text-align: start;
 }
 
-#tagline{
-    text-align: center;
-    display: flex;
-    font-size: 2em;
-    flex-wrap: wrap;
-    position: relative;
+#tagline {
+  text-align: center;
+  display: flex;
+  font-size: 2em;
+  flex-wrap: wrap;
+  position: relative;
 }
 
-.rotating{
-    /* display:inline; */
-    text-align: center;
-    color:crimson;
+.rotating {
+  /* display:inline; */
+  text-align: center;
+  color: crimson;
 }
 
-.rotating span{
-    background-color: beige;
-    animation: rotateWords 9s linear infinite 0s;  
-    position: absolute;
-    opacity: 0; 
-    margin-inline-start: .25em;
-    /* text-align: start; */
-    width:max-content;
-    /* height: min-content; */
+.rotating span {
+  /* background-color: beige; */
+  animation: rotateWords 9s linear infinite 0s;
+  position: absolute;
+  opacity: 0;
+  margin-inline-start: 0.25em;
+  /* text-align: start; */
+  width: max-content;
+  /* height: min-content; */
 }
 
-.rotating span:nth-child(2){
-    animation-delay: 3s;
+.rotating span:nth-child(2) {
+  animation-delay: 3s;
 }
-.rotating span:nth-child(3){
-    animation-delay: 6s;
+.rotating span:nth-child(3) {
+  animation-delay: 6s;
 }
 
 @keyframes rotateWords {
-    0% { opacity: 0; animation-timing-function: ease-in; height: 0px; }
-    8% { opacity: 1; height: 60px; }
-    25% { opacity: 1; height: 60px; }
-	35% { opacity: 0; height: 60px; }
-    100% { opacity: 0; }
+  0% {
+    opacity: 0;
+    animation-timing-function: ease-in;
+    height: 0px;
+  }
+  8% {
+    opacity: 1;
+    height: 60px;
+  }
+  25% {
+    opacity: 1;
+    height: 60px;
+  }
+  35% {
+    opacity: 0;
+    height: 60px;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 
-
-.absoluteContainer{
-    position: relative;
+.fullpage {
+  position: relative;
+  height: 100vh;
 }
 
-.homeContent{
-    padding:200px 0;
-    width: 75vw;
-    /* height:100vh; */
-    margin: auto;
-    text-align: start;
+.homeContent {
+  position: absolute;
+  top: 45%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  text-align: start;
 }
 
-.section{
-    width: 75vw;
-    margin: auto;
-    padding:0px 1.0875rem 1.45rem;
+.section {
+  /* width: 75vw; */
+  /* height:100vh; */
+  margin: auto;
+  padding: 0px 1.0875rem 1.45rem;
+}
+/*
+    TODO
+    make .bounce dissapear on scroll/ reapper etc
+    prob with hidden elemetn at top of page
+*/
+
+.bounce {
+  -moz-animation: bounce 2s infinite;
+  -webkit-animation: bounce 2s infinite;
+  animation: bounce 2s infinite;
+  position: absolute;
+  bottom: 5%;
+  left: 0;
+  right: 0;
+  text-align: center;
+  /* margin: 0 auto; */
+}
+@keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-30px);
+  }
+  60% {
+    transform: translateY(-15px);
+  }
 }

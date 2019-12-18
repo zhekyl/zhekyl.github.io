@@ -11,13 +11,11 @@ const IndexPage = () => {
     <Layout>
       <IndexHeader></IndexHeader>
       <SEO title="Home" />
-      <div style={{
-        backgroundColor:`orange`,
-      }}>
-        <div className ={indexStyles.homeContent}>
+      <div className={indexStyles.fullpage}>
+        <div className={indexStyles.homeContent}>
           <h1 className={indexStyles.name}>Kyle Zheng</h1>
           <div id={indexStyles.tagline}>
-            <p>I'm a developer looking for </p>
+            <p>is looking for </p>
             <span className={indexStyles.rotating}>
               <span>a cool new project.</span>
               <span>internship opportunities!</span>
@@ -25,17 +23,24 @@ const IndexPage = () => {
             </span>
           </div>
         </div>
-
-        {/* <div className ={indexStyles.absoluteContainer}>
-          <img id={indexStyles.spin} src={spin} alt="me"></img>
-        </div> */}
+        <a className={indexStyles.bounce}>henlo</a>
       </div>
 
       <div className={indexStyles.section}>
+
         <h1 id="about">About</h1>
+        <p>I'm a first year majoring in computer science and math at Purdue.</p>
         <p>
-          I'm a first year majoring in computer science and math at Purdue. Yes,
-          I am that nerdy.
+          Here is some relevant information that shows my personality and
+          interests both within and outside of computer science.
+        </p>
+        <p>
+          Here is some relevant information that shows my personality and
+          interests both within and outside of computer science.
+        </p>
+        <p>
+          Here is some relevant information that shows my personality and
+          interests both within and outside of computer science.
         </p>
         <p>
           Here is some relevant information that shows my personality and
