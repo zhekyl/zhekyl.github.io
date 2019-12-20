@@ -78,11 +78,6 @@
   margin: auto;
   padding: 0px 1.0875rem 1.45rem;
 }
-/*
-    TODO
-    make .bounce dissapear on scroll/ reapper etc
-    prob with hidden elemetn at top of page
-*/
 
 .bounce {
   -moz-animation: bounce 2s infinite;

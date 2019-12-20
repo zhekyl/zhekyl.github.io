@@ -6,6 +6,8 @@ import IndexHeader from "../components/IndexHeader"
 import spin from "../images/spin.gif"
 import Layout from "../components/layout"
 
+import Fade from 'react-reveal/Fade'
+
 const IndexPage = () => {
   return (
     <Layout>
@@ -25,9 +27,8 @@ const IndexPage = () => {
         </div>
         <a className={indexStyles.bounce}>henlo</a>
       </div>
-
-      <div className={indexStyles.section}>
-
+      <Fade left>
+          <div className={indexStyles.section}>
         <h1 id="about">About</h1>
         <p>I'm a first year majoring in computer science and math at Purdue.</p>
         <p>
@@ -47,10 +48,14 @@ const IndexPage = () => {
           interests both within and outside of computer science.
         </p>
       </div>
-      <div className={indexStyles.section}>
+      </Fade>
+      <Fade right>
+        <div className={indexStyles.section}>
         <h1 id="projects">Projects</h1>
       </div>
-      <div className={indexStyles.section}>
+      </Fade>
+      <Fade left>
+        <div className={indexStyles.section}>
         <h1 id="resume">Resume</h1>
         <p>
           reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
@@ -58,6 +63,8 @@ const IndexPage = () => {
           culpa qui officia deserunt mollit anim id est laborum.
         </p>
       </div>
+      </Fade>
+      
     </Layout>
   )
 }
