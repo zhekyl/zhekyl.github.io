@@ -2,41 +2,43 @@
 import React from "react"
 
 const SectionLink = ( {sectionTitle} ) => (
-  <h3
+  <span
     style={{
-      margin: 0,
+      margin: `1em 1.5em`,
       display: `inline-block`,
-      padding: `.5em 1em`,
-      color: `black`,
+      padding: `0 .25em`,
+      color: `gray`,
       textDecoration: `none`,
       fontFamily:`Roboto sans-serif`,
+      fontSize:`1.25em`,
+      borderRadius:`16px`,
+      background:`#ccffee`,
    }}>
     <a
       onClick={
         ()=>document.getElementById(sectionTitle).scrollIntoView()
       }
     >{sectionTitle}</a>
-  </h3>
+  </span>
 )
 
 const IndexHeader = () => (
   <header
     style={{
-      position: `fixed`,
+      position:`fixed`,
+      zIndex:`100`,
       width:`100vw`,
-    }}
+      textAlign:`right`,
+      }}
   >
     <div
-      style={{
-        width: `75vw`,
-        textAlign: `right`,
-        margin:`0 auto`,
-      }}
-    >
+    style={{
+    }}>
       <SectionLink sectionTitle="about"></SectionLink>
       <SectionLink sectionTitle="projects"></SectionLink>
       <SectionLink sectionTitle="resume"></SectionLink>
     </div>
+      
   </header>
 )
 
