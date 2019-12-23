@@ -1,7 +1,8 @@
-.name {
+#name {
   font-size: 5em;
   color: lightseagreen;
   text-align: start;
+  /* font-family: "Roboto Mono", monospace; */
 }
 
 #tagline {
@@ -62,6 +63,7 @@
 .fullpage {
   position: relative;
   height: 100vh;
+  padding:240px 0;
 }
 
 .homeContent {
@@ -69,14 +71,20 @@
   top: 45%;
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
-  text-align: start;
+  /* text-align: start; */
 }
 
-.section {
-  /* width: 75vw; */
-  /* height:100vh; */
-  margin: auto;
-  padding: 0px 1.0875rem 1.45rem;
+
+.thinSection{
+  margin: 0 auto;
+  padding:20px 80px;
+  max-width: 1000px;
+}
+
+.wideSection{
+  margin: 0 auto;
+  padding:20px 80px;
+  max-width: 1500px;
 }
 
 .bounce {
