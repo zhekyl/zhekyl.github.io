@@ -1,14 +1,13 @@
 #name {
-  /* font-size: 5em; */
+  font-size: 4em;
   color: lightseagreen;
   text-align: start;
-  /* font-family: "Roboto Mono", monospace; */
 }
 
 #tagline {
   text-align: center;
   display: flex;
-  /* font-size: 2em; */
+  font-size: 2em;
   flex-wrap: wrap;
   position: relative;
 }
@@ -60,6 +59,13 @@
   }
 }
 
+.strike{
+  text-decoration: line-through;
+}
+.highlight{
+  color: crimson;
+}
+
 .fullpage {
   position: relative;
   height: 100vh;
@@ -74,7 +80,6 @@
   /* text-align: start; */
 }
 
-
 .thinSection{
   margin: 0 auto;
   padding:20px 80px;
@@ -82,9 +87,15 @@
 }
 
 .wideSection{
+  /* background-color: rebeccapurple; */
+  margin:340px 16px;
+}
+
+.wideSectionContent{
   margin: 0 auto;
   padding:20px 80px;
   max-width: 1500px;
+  height: 540px;
 }
 
 .bounce {
