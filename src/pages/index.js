@@ -5,29 +5,55 @@ import SEO from "../components/seo"
 import PageHeader from "../components/PageHeader"
 import spin from "../images/spin.gif"
 import Layout from "../components/layout"
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faChevronDown } from "@fortawesome/free-solid-svg-icons"
 // import resume from "../images/Resume.pdf"
 import Fade from "react-reveal/Fade"
 
+import ReactRotatingText from "react-rotating-text"
+
+import MobileFramedImage from "../components/MobileFramedImage"
+
+import stomp from "../images/stomp_cycle.png"
+
 const IndexPage = () => {
+
   return (
     <>
       {/* <PageHeader sections={["about", "projects", "resume"]}></PageHeader> */}
       <Layout>
         <SEO title="Home" />
         <div className={indexStyles.fullpage}>
-          <div className={indexStyles.homeContent}>
+          <div
+            className={`${indexStyles.thinSection} ${indexStyles.homeContent}`}
+          >
             <h1 id={indexStyles.name}>Kyle Zheng</h1>
             <div id={indexStyles.tagline}>
-              <p>I am a </p>
-              <span className={indexStyles.rotating}>
+              <p>
+                I am
+                <ReactRotatingText
+                  items={[
+                    "a developer",
+                    "a cool guy in general",
+                    "not like the other boys",
+                  ]}
+                  cursor={false}
+                  className={indexStyles.rotatingText}
+                  color={`crimson`}
+                  emptyPause={250}
+                  deletingInterval={25}
+                />
+              </p>
+              {/* <span className={indexStyles.rotating}>
                 <span>student</span>
                 <span>developer</span>
                 <span>cool guy in general</span>
-              </span>
+              </span> */}
             </div>
           </div>
-          <a className={indexStyles.bounce}>owo</a>
+          <a className={indexStyles.bounce}>
+            <FontAwesomeIcon icon={faChevronDown} />
+          </a>
         </div>
         <Fade left>
           <div className={indexStyles.thinSection}>
@@ -36,9 +62,9 @@ const IndexPage = () => {
               I'm currently studying{" "}
               <span className={indexStyles.highlight}>computer science</span>{" "}
               and <span className={indexStyles.highlight}>math</span> at Purdue
-              University. My programming experience can be described as "working
-              on dumb projects and also some cool stuff occasionally." I'm
-              always looking for new opportunities to grow, new ideas to{" "}
+              University. My programming experience can be described as "mostly
+              working on dumb projects and occasionally some cool stuff also."
+              I'm always looking for new opportunities to grow, new ideas to{" "}
               <span className={indexStyles.strike}>copy</span> learn from, and
               new ways to use technology for questionable purposes.
             </p>
@@ -65,6 +91,7 @@ const IndexPage = () => {
                 <p>Splodge, Rocket Run, Slyme, Stomp, Hacker Hero</p>
               </div>
             </div>
+            <MobileFramedImage image={{ stomp }}></MobileFramedImage>
 
             <div
               className={indexStyles.wideSection}
