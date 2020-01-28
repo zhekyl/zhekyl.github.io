@@ -1,3 +1,10 @@
+h1{
+  margin:0;
+  padding-top: 40px;
+}
+html{
+  scroll-behavior: smooth;
+}
 #name {
   font-size: 3em;
   text-align: start;
@@ -7,7 +14,7 @@
 #tagline {
   /* text-align: center; */
   display: flex;
-  font-size: 2em;
+  font-size: 1.6em;
   flex-wrap: wrap;
   position: relative;
 }
@@ -52,36 +59,47 @@
   /* align-items: center; */
 }
 
-
+.sectionHeader{
+  margin: 0 auto;
+  margin-top:40px;
+  padding: 0 80px;
+  /* padding-top: 20px; */
+  max-width: 1000px;
+}
 
 .thinSection {
-  height: 100vh;
+  /* height: 100vh; */
   margin: 0 auto;
   padding: 20px 80px;
   max-width: 1000px;
 }
 
-.wideSection {
+.wideSection{
   margin: 0 auto;
-  padding: 20px 80px;
-  max-width: 1500px;
-  height: 540px;
+  padding: 0 40px;
+}
+.wideSectionContent {
+  margin: 20px auto;
+  padding: 20px 40px;
+  max-width: 1000px;
+  border-radius: 4px 64px;
 }
 
-/* .wideSectionContent {
-  margin: 0 auto;
-  padding: 20px 80px;
-  max-width: 1500px;
-  height: 540px;
-} */
 
 @media only screen and (max-width: 600px) {
+  .sectionHeader{
+    padding: 0 20px;
+  }
   .thinSection {
     padding: 20px 20px;
   }
   
   .wideSection {
-    padding: 20px 20px;
+    padding: 0px;
+  }
+  .wideSectionContent{
+    padding: 20px 24px;
+    border-radius: 0;
   }
 }
 
@@ -93,18 +111,27 @@
 
    */
   /* height: 100vh; */
-  padding-top: 200px;
+  padding-top: 220px;
+}
+
+html:not([data-scroll='0']) .bounce{
+    display:none;
+  
 }
 
 .bounce {
-  -moz-animation: bounce 2s infinite;
-  -webkit-animation: bounce 2s infinite;
-  animation: bounce 2s infinite;
+  display: block;
+  padding:24px;
   position: absolute;
   bottom: 5%;
   left: 0;
   right: 0;
   text-align: center;
+}
+.bounceIcon{
+  -moz-animation: bounce 2s infinite;
+  -webkit-animation: bounce 2s infinite;
+  animation: bounce 2s infinite;
 }
 @keyframes bounce {
   0%,
@@ -136,4 +163,8 @@
   to {
     border-right-color: transparent;
   }
+}
+
+.particles {
+  position: fixed;
 }

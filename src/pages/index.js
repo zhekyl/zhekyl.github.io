@@ -15,13 +15,79 @@ import ReactRotatingText from "react-rotating-text"
 import MobileFramedImage from "../components/MobileFramedImage"
 
 import stomp from "../images/stomp_cycle.png"
+import Particles from "react-particles-js"
+
+
+import gamesImg from "../images/games.png"
+import webImg from "../images/web.png"
+
+import buildingsImg from "../images/buildings.png"
+import forkuImg from "../images/forku.png"
+import grapevineImg from "../images/grapevine.png"
+import hackerheroImg from "../images/hackerhero.png"
+
 
 const IndexPage = () => {
-
   return (
     <>
       {/* <PageHeader sections={["about", "projects", "resume"]}></PageHeader> */}
       <Layout>
+        <Particles
+          className={indexStyles.particles}
+          height={`100vh`}
+          width={`100vw`}
+          params={{
+            particles: {
+              number: {
+                value: 13,
+                density: {
+                  enable: true,
+                  value_area: 800,
+                },
+              },
+              color: {
+                value: "#d934bc",
+              },
+              shape: {
+                type: "circle",
+              },
+              opacity: {
+                value: 0.07,
+                random: true,
+                anim: {
+                  enable: false,
+                  speed: 1,
+                  opacity_min: 0.1,
+                  sync: false,
+                },
+              },
+              size: {
+                value: 69,
+                random: true,
+                anim: {
+                  enable: true,
+                  speed: 10,
+                  size_min: 40,
+                  sync: false,
+                },
+              },
+              move: {
+                enable: true,
+                speed: 2,
+                direction: "none",
+                random: false,
+                straight: false,
+                out_mode: "out",
+                bounce: false,
+                attract: {
+                  enable: false,
+                  rotateX: 600,
+                  rotateY: 1200,
+                },
+              },
+            },
+          }}
+        />
         <SEO title="Home" />
         <div className={indexStyles.fullpage}>
           <div
@@ -30,7 +96,7 @@ const IndexPage = () => {
             <h1 id={indexStyles.name}>Kyle Zheng</h1>
             <div id={indexStyles.tagline}>
               <p>
-                I am
+                is
                 <ReactRotatingText
                   items={[
                     "a developer",
@@ -51,75 +117,81 @@ const IndexPage = () => {
               </span> */}
             </div>
           </div>
-          <a className={indexStyles.bounce}>
-            <FontAwesomeIcon icon={faChevronDown} />
+          <a className={indexStyles.bounce} href="#about">
+            <FontAwesomeIcon
+              icon={faChevronDown}
+              className={indexStyles.bounceIcon}
+            />
           </a>
         </div>
         <Fade left>
-          <div className={indexStyles.thinSection}>
+          <div className={indexStyles.sectionHeader}>
             <h1 id="about">About</h1>
+          </div>
+          <div className={indexStyles.thinSection}>
             <p>
               I'm currently studying{" "}
               <span className={indexStyles.highlight}>computer science</span>{" "}
               and <span className={indexStyles.highlight}>math</span> at Purdue
-              University. My programming experience can be described as "mostly
-              working on dumb projects and occasionally some cool stuff also."
-              I'm always looking for new opportunities to grow, new ideas to{" "}
+              University. I'm mostly working on dumb projects and occasionally
+              some cool stuff also. The rest of the time I'm looking for new
+              opportunities to grow, new ideas to{" "}
               <span className={indexStyles.strike}>copy</span> learn from, and
               new ways to use technology for questionable purposes.
             </p>
-
-            {/* <p>
-              Although I'm just getting started, I have the most experience in
-              mobile development using Flutter, Unity, as well as native
-              Android. I've also dabbled in web development, but I look forward
-              to broadening my experience and skills.
-            </p> */}
           </div>
         </Fade>
 
         <Fade up>
-          <h1 id="projects">Projects</h1>
           <div>
-            <div
-              className={indexStyles.wideSection}
-              style={{ backgroundColor: `#FF6F61` }}
-            >
-              <div className={indexStyles.wideSectionContent}>
+            <div className={indexStyles.sectionHeader}>
+              <h1 id="projects">Projects</h1>
+            </div>
+            <div className={indexStyles.wideSection}>
+              <div
+                className={indexStyles.wideSectionContent}
+                style={{ backgroundColor: `#FF6F6140` }}
+              >
                 <h4>A Variety of Hypercasual Mobile Games</h4>
+                <img src={gamesImg}/>
                 <p>Built with the Unity game engine</p>
-                <p>Splodge, Rocket Run, Slyme, Stomp, Hacker Hero</p>
               </div>
             </div>
-            <MobileFramedImage image={{ stomp }}></MobileFramedImage>
+            {/* <MobileFramedImage image={{ stomp }}></MobileFramedImage> */}
 
-            <div
-              className={indexStyles.wideSection}
-              style={{ backgroundColor: `#6B5B95` }}
-            >
-              <div className={indexStyles.wideSectionContent}>
+            <div className={indexStyles.wideSection}>
+              <div
+                className={indexStyles.wideSectionContent}
+                style={{ backgroundColor: `#6B5B9540` }}
+              >
                 <h4>Web Development</h4>
+                <img src={webImg}/>
                 <p>Build using modern and responsive frameworks</p>
-                <p>KGG.wtf, kylezheng.tech</p>
+
               </div>
             </div>
 
-            <div
-              className={indexStyles.wideSection}
-              style={{ backgroundColor: `#88B04B` }}
-            >
-              <div className={indexStyles.wideSectionContent}>
+            <div className={indexStyles.wideSection}>
+              <div
+                className={indexStyles.wideSectionContent}
+                style={{ backgroundColor: `#88B04B40` }}
+              >
                 <h4>Hackathon Projects</h4>
+                <img src={buildingsImg}/>
+                <img src={forkuImg}/>
+                <img src={grapevineImg}/>
+                <img src={hackerheroImg}/>
                 <p>Random crazy stuff</p>
-                <p>Purdue Buildings, Grapevine, Hacker Hero</p>
               </div>
             </div>
           </div>
         </Fade>
 
         <Fade left>
-          <div className={indexStyles.thinSection}>
+          <div className={indexStyles.sectionHeader}>
             <h1 id="resume">Resume</h1>
+          </div>
+          <div className={indexStyles.thinSection}>
             <p>If I haven't scared you away yet, take a look at my resume!</p>
             <a href={"/resume.pdf"} target="_blank">
               See Resume
