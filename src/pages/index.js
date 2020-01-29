@@ -46,7 +46,7 @@ const IndexPage = () => {
               }}
             ><h1 id={indexStyles.name}>Kyle Zheng</h1>
               
-              <div>
+              <div style={{textAlign:`right`}}>
                 <a
                   className={indexStyles.iconButton}
                   href="https://github.com/zhengkyl"
@@ -211,7 +211,7 @@ const IndexPage = () => {
                 justifyContent: `flex-end`,
               }}
             >
-              <div>
+              <div style={{textAlign:`right`}}>
                 <a
                   className={indexStyles.iconButton}
                   href="https://github.com/zhengkyl"
