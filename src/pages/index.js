@@ -1,121 +1,89 @@
 import React from "react"
 
+import Fade from "react-reveal/Fade"
+import ReactRotatingText from "react-rotating-text"
+import Particles from "react-particles-js"
+import particleParams from "../assets/json/particleParams.json"
+import { Carousel } from "react-responsive-carousel"
+import "react-responsive-carousel/lib/styles/carousel.min.css"
+
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faChevronDown, faFile } from "@fortawesome/free-solid-svg-icons"
+import { faGithub, faLinkedin, faDev } from "@fortawesome/free-brands-svg-icons"
+
 import indexStyles from "./index.module.css"
 import SEO from "../components/seo"
-import PageHeader from "../components/PageHeader"
-import spin from "../images/spin.gif"
 import Layout from "../components/layout"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faChevronDown } from "@fortawesome/free-solid-svg-icons"
-// import resume from "../images/Resume.pdf"
-import Fade from "react-reveal/Fade"
 
-import ReactRotatingText from "react-rotating-text"
-
-import MobileFramedImage from "../components/MobileFramedImage"
-
-import stomp from "../images/stomp_cycle.png"
-import Particles from "react-particles-js"
-
-
-import gamesImg from "../images/games.png"
-import webImg from "../images/web.png"
-
-import buildingsImg from "../images/buildings.png"
-import forkuImg from "../images/forku.png"
-import grapevineImg from "../images/grapevine.png"
-import hackerheroImg from "../images/hackerhero.png"
-
+import gamesImg from "../assets/images/games.png"
+import webImg from "../assets/images/web.png"
+import buildingsImg from "../assets/images/buildings.png"
+import forkuImg from "../assets/images/forku.png"
+import grapevineImg from "../assets/images/grapevine.png"
+import hackerheroImg from "../assets/images/hackerhero.png"
 
 const IndexPage = () => {
   return (
     <>
-      {/* <PageHeader sections={["about", "projects", "resume"]}></PageHeader> */}
       <Layout>
         <Particles
           className={indexStyles.particles}
           height={`100vh`}
           width={`100vw`}
-          params={{
-            particles: {
-              number: {
-                value: 13,
-                density: {
-                  enable: true,
-                  value_area: 800,
-                },
-              },
-              color: {
-                value: "#d934bc",
-              },
-              shape: {
-                type: "circle",
-              },
-              opacity: {
-                value: 0.07,
-                random: true,
-                anim: {
-                  enable: false,
-                  speed: 1,
-                  opacity_min: 0.1,
-                  sync: false,
-                },
-              },
-              size: {
-                value: 69,
-                random: true,
-                anim: {
-                  enable: true,
-                  speed: 10,
-                  size_min: 40,
-                  sync: false,
-                },
-              },
-              move: {
-                enable: true,
-                speed: 2,
-                direction: "none",
-                random: false,
-                straight: false,
-                out_mode: "out",
-                bounce: false,
-                attract: {
-                  enable: false,
-                  rotateX: 600,
-                  rotateY: 1200,
-                },
-              },
-            },
-          }}
+          params={particleParams}
         />
         <SEO title="Home" />
         <div className={indexStyles.fullpage}>
           <div
             className={`${indexStyles.thinSection} ${indexStyles.homeContent}`}
           >
-            <h1 id={indexStyles.name}>Kyle Zheng</h1>
-            <div id={indexStyles.tagline}>
-              <p>
-                is
-                <ReactRotatingText
-                  items={[
-                    "a developer",
-                    "a cool guy in general",
-                    "not like the other boys",
-                  ]}
-                  cursor={false}
-                  className={indexStyles.rotatingText}
-                  color={`crimson`}
-                  emptyPause={250}
-                  deletingInterval={25}
-                />
-              </p>
-              {/* <span className={indexStyles.rotating}>
-                <span>student</span>
-                <span>developer</span>
-                <span>cool guy in general</span>
-              </span> */}
+            
+            <div
+              style={{
+                display: `flex`,
+                alignItems:`center`,
+                justifyContent:`space-between`,
+              }}
+            ><h1 id={indexStyles.name}>Kyle Zheng</h1>
+              
+              <div>
+                <a
+                  className={indexStyles.iconButton}
+                  href="https://github.com/zhengkyl"
+                >
+                  <FontAwesomeIcon icon={faGithub} />
+                </a>
+                <a
+                  className={indexStyles.iconButton}
+                  href="https://devpost.com/zhengkyl"
+                >
+                  <FontAwesomeIcon icon={faDev} />
+                </a>
+                <a
+                  className={indexStyles.iconButton}
+                  href="https://www.linkedin.com/in/kyle-zheng-9b2546145/"
+                >
+                  <FontAwesomeIcon icon={faLinkedin} />
+                </a>
+              </div>
             </div>
+            <div id={indexStyles.tagline}>
+                <p>
+                  is
+                  <ReactRotatingText
+                    items={[
+                      "a developer",
+                      "a cool guy in general",
+                      "not like the other boys",
+                    ]}
+                    cursor={false}
+                    className={indexStyles.rotatingText}
+                    color={`crimson`}
+                    emptyPause={250}
+                    deletingInterval={25}
+                  />
+                </p>
+              </div>
           </div>
           <a className={indexStyles.bounce} href="#about">
             <FontAwesomeIcon
@@ -124,7 +92,7 @@ const IndexPage = () => {
             />
           </a>
         </div>
-        <Fade left>
+        <Fade up>
           <div className={indexStyles.sectionHeader}>
             <h1 id="about">About</h1>
           </div>
@@ -142,60 +110,128 @@ const IndexPage = () => {
           </div>
         </Fade>
 
-        <Fade up>
-          <div>
-            <div className={indexStyles.sectionHeader}>
-              <h1 id="projects">Projects</h1>
-            </div>
-            <div className={indexStyles.wideSection}>
-              <div
-                className={indexStyles.wideSectionContent}
-                style={{ backgroundColor: `#FF6F6140` }}
-              >
-                <h4>A Variety of Hypercasual Mobile Games</h4>
-                <img src={gamesImg}/>
-                <p>Built with the Unity game engine</p>
+        <Fade left>
+          <div className={indexStyles.sectionHeader}>
+            <h1 id="projects">Projects</h1>
+          </div>
+          <div className={indexStyles.wideSection}>
+            <div
+              className={indexStyles.wideSectionContent}
+              style={{ backgroundColor: `#FF6F6140` }}
+            >
+              <h4>A Variety of Hypercasual Mobile Games</h4>
+              <div className={indexStyles.flexContent}>
+                <img className={indexStyles.projectImg} src={gamesImg} />
+                <div className={indexStyles.projectDesc}>
+                  <p>C# in the Unity game engine</p>
+                  <p>Vector graphics with Inkscape</p>
+                  <p>3d modeling and animation with Blender</p>
+                  <p>Dubious game design</p>
+                </div>
               </div>
             </div>
-            {/* <MobileFramedImage image={{ stomp }}></MobileFramedImage> */}
+          </div>
 
-            <div className={indexStyles.wideSection}>
-              <div
-                className={indexStyles.wideSectionContent}
-                style={{ backgroundColor: `#6B5B9540` }}
-              >
-                <h4>Web Development</h4>
-                <img src={webImg}/>
-                <p>Build using modern and responsive frameworks</p>
-
+          <div className={indexStyles.wideSection}>
+            <div
+              className={indexStyles.wideSectionContent}
+              style={{ backgroundColor: `#6B5B9540` }}
+            >
+              <h4>Web Development</h4>
+              <div className={indexStyles.flexContent}>
+                <div className={indexStyles.projectDesc}>
+                  <p>Built using modern and responsive techniques</p>
+                  <p>React frameworks such as GatsbyJS</p>
+                  <p>Jekyll for Github Pages sites</p>
+                  <p>Advanced centering of divs</p>
+                </div>
+                <img className={indexStyles.projectImg} src={webImg} />
               </div>
             </div>
+          </div>
 
-            <div className={indexStyles.wideSection}>
-              <div
-                className={indexStyles.wideSectionContent}
-                style={{ backgroundColor: `#88B04B40` }}
-              >
-                <h4>Hackathon Projects</h4>
-                <img src={buildingsImg}/>
-                <img src={forkuImg}/>
-                <img src={grapevineImg}/>
-                <img src={hackerheroImg}/>
-                <p>Random crazy stuff</p>
+          <div className={indexStyles.wideSection}>
+            <div
+              className={indexStyles.wideSectionContent}
+              style={{ backgroundColor: `#88B04B40` }}
+            >
+              <h4>Hackathon Projects</h4>
+              <div>
+                <Carousel
+                  infiniteLoop={true}
+                  dynamicHeight={true}
+                  showThumbs={false}
+                >
+                  <div>
+                    <img src={buildingsImg} />
+                    <p className="legend">
+                      Indoor pathfinding/navigation using node maps
+                    </p>
+                  </div>
+                  <div>
+                    <img src={forkuImg} />
+                    <p className="legend">Fork crowdshare service concept</p>
+                  </div>
+                  <div>
+                    <img src={grapevineImg} />
+                    <p className="legend">
+                      Proximity based Bluetooth messaging app
+                    </p>
+                  </div>
+                  <div>
+                    <img src={hackerheroImg} />
+                    <p className="legend">Rhythm game using Youtube videos</p>
+                  </div>
+                </Carousel>
               </div>
             </div>
           </div>
         </Fade>
 
-        <Fade left>
+        <Fade up>
           <div className={indexStyles.sectionHeader}>
-            <h1 id="resume">Resume</h1>
+            <h1 id="resume">Finally!</h1>
           </div>
           <div className={indexStyles.thinSection}>
-            <p>If I haven't scared you away yet, take a look at my resume!</p>
-            <a href={"/resume.pdf"} target="_blank">
-              See Resume
-            </a>
+            <div style={{ width: `100%`, verticalAlign: `center` }}>
+              <p>
+                If you're interested, take a look at my{" "}
+                <a
+                  className={indexStyles.linkButton}
+                  href="/resume.pdf"
+                  target="_blank"
+                >
+                  resume <FontAwesomeIcon icon={faFile} />
+                </a>
+              </p>
+            </div>
+            <div
+              style={{
+                display: `flex`,
+                justifyContent: `flex-end`,
+              }}
+            >
+              <div>
+                <a
+                  className={indexStyles.iconButton}
+                  href="https://github.com/zhengkyl"
+                >
+                  <FontAwesomeIcon icon={faGithub} />
+                </a>
+                <a
+                  className={indexStyles.iconButton}
+                  href="https://devpost.com/zhengkyl"
+                >
+                  <FontAwesomeIcon icon={faDev} />
+                </a>
+                <a
+                  className={indexStyles.iconButton}
+                  href="https://www.linkedin.com/in/kyle-zheng-9b2546145/"
+                >
+                  <FontAwesomeIcon icon={faLinkedin} />
+                </a>
+              </div>
+            </div>
           </div>
         </Fade>
       </Layout>

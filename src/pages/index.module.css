@@ -1,14 +1,15 @@
-h1{
-  margin:0;
+h1 {
+  margin: 0;
   padding-top: 40px;
 }
-html{
+html {
   scroll-behavior: smooth;
 }
 #name {
   font-size: 3em;
   text-align: start;
   margin: 0;
+  padding: 0;
 }
 
 #tagline {
@@ -59,9 +60,9 @@ html{
   /* align-items: center; */
 }
 
-.sectionHeader{
+.sectionHeader {
   margin: 0 auto;
-  margin-top:40px;
+  margin-top: 40px;
   padding: 0 80px;
   /* padding-top: 20px; */
   max-width: 1000px;
@@ -74,7 +75,7 @@ html{
   max-width: 1000px;
 }
 
-.wideSection{
+.wideSection {
   margin: 0 auto;
   padding: 0 40px;
 }
@@ -85,19 +86,18 @@ html{
   border-radius: 4px 64px;
 }
 
-
-@media only screen and (max-width: 600px) {
-  .sectionHeader{
+@media only screen and (max-width: 610px) {
+  .sectionHeader {
     padding: 0 20px;
   }
   .thinSection {
     padding: 20px 20px;
   }
-  
+
   .wideSection {
     padding: 0px;
   }
-  .wideSectionContent{
+  .wideSectionContent {
     padding: 20px 24px;
     border-radius: 0;
   }
@@ -114,21 +114,17 @@ html{
   padding-top: 220px;
 }
 
-html:not([data-scroll='0']) .bounce{
-    display:none;
-  
-}
-
 .bounce {
-  display: block;
-  padding:24px;
+  /* display: none; */
+  padding: 24px;
   position: absolute;
   bottom: 5%;
   left: 0;
   right: 0;
   text-align: center;
 }
-.bounceIcon{
+
+.bounceIcon {
   -moz-animation: bounce 2s infinite;
   -webkit-animation: bounce 2s infinite;
   animation: bounce 2s infinite;
@@ -149,13 +145,13 @@ html:not([data-scroll='0']) .bounce{
   }
 }
 
-
 .rotatingText {
-  animation: blinking-cursor 0.8s cubic-bezier(0.68, 0.01, 0.01, 0.99) 0s infinite;
-  margin-left: .25em;
+  animation: blinking-cursor 0.8s cubic-bezier(0.68, 0.01, 0.01, 0.99) 0s
+    infinite;
+  margin-left: 0.25em;
   border-right-style: solid;
 }
-  
+
 @keyframes blinking-cursor {
   from {
     border-right-color: #666;
@@ -167,4 +163,64 @@ html:not([data-scroll='0']) .bounce{
 
 .particles {
   position: fixed;
+  z-index: -1;
+}
+
+.projectImg {
+  /* margin:0 40px; */
+  width: 60%;
+  height: auto;
+  flex-grow: 1;
+}
+.projectDesc {
+  flex-grow: 1;
+  width: 220px;
+  padding: 16px;
+}
+
+.flexContent {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.iconButton {
+  color: crimson;
+  text-decoration: none;
+  padding: 12px;
+  font-size: 2.5em;
+}
+
+.iconButton:hover {
+  color: black;
+}
+
+.linkButton {
+  background-color: crimson; /* Green */
+  border: none;
+  color: white;
+  padding: 4px 8px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.linkButton:hover {
+  background-color: white;
+  color: black;
+  border: 2px solid crimson;
+}
+
+img {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none;
 }
