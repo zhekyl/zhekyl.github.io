@@ -37,53 +37,56 @@ const IndexPage = () => {
           <div
             className={`${indexStyles.thinSection} ${indexStyles.homeContent}`}
           >
-            
             <div
               style={{
                 display: `flex`,
-                alignItems:`center`,
-                justifyContent:`space-between`,
+                alignItems: `center`,
+                justifyContent: `space-between`,
               }}
-            ><h1 id={indexStyles.name}>Kyle Zheng</h1>
-              
-              <div style={{textAlign:`right`}}>
+            >
+              <h1 id={indexStyles.name}>Kyle Zheng</h1>
+
+              <div style={{ textAlign: `right` }}>
                 <a
                   className={indexStyles.iconButton}
                   href="https://github.com/zhengkyl"
+                  target="_blank"
                 >
                   <FontAwesomeIcon icon={faGithub} />
                 </a>
                 <a
                   className={indexStyles.iconButton}
                   href="https://devpost.com/zhengkyl"
+                  target="_blank"
                 >
                   <FontAwesomeIcon icon={faDev} />
                 </a>
                 <a
                   className={indexStyles.iconButton}
                   href="https://www.linkedin.com/in/kyle-zheng-9b2546145/"
+                  target="_blank"
                 >
                   <FontAwesomeIcon icon={faLinkedin} />
                 </a>
               </div>
             </div>
             <div id={indexStyles.tagline}>
-                <p>
-                  is
-                  <ReactRotatingText
-                    items={[
-                      "a developer",
-                      "a cool guy in general",
-                      "not like the other boys",
-                    ]}
-                    cursor={false}
-                    className={indexStyles.rotatingText}
-                    color={`crimson`}
-                    emptyPause={250}
-                    deletingInterval={25}
-                  />
-                </p>
-              </div>
+              <p>
+                is
+                <ReactRotatingText
+                  items={[
+                    "a developer",
+                    "a cool guy in general",
+                    "not like the other boys",
+                  ]}
+                  cursor={false}
+                  className={indexStyles.rotatingText}
+                  color={`crimson`}
+                  emptyPause={250}
+                  deletingInterval={25}
+                />
+              </p>
+            </div>
           </div>
           <a className={indexStyles.bounce} href="#about">
             <FontAwesomeIcon
@@ -211,22 +214,25 @@ const IndexPage = () => {
                 justifyContent: `flex-end`,
               }}
             >
-              <div style={{textAlign:`right`}}>
+              <div style={{ textAlign: `right` }}>
                 <a
                   className={indexStyles.iconButton}
                   href="https://github.com/zhengkyl"
+                  target="_blank"
                 >
                   <FontAwesomeIcon icon={faGithub} />
                 </a>
                 <a
                   className={indexStyles.iconButton}
                   href="https://devpost.com/zhengkyl"
+                  target="_blank"
                 >
                   <FontAwesomeIcon icon={faDev} />
                 </a>
                 <a
                   className={indexStyles.iconButton}
                   href="https://www.linkedin.com/in/kyle-zheng-9b2546145/"
+                  target="_blank"
                 >
                   <FontAwesomeIcon icon={faLinkedin} />
                 </a>
