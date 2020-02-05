@@ -126,10 +126,21 @@ const IndexPage = () => {
               <div className={indexStyles.flexContent}>
                 <img className={indexStyles.projectImg} src={gamesImg} />
                 <div className={indexStyles.projectDesc}>
-                  <p>C# in the Unity game engine</p>
-                  <p>Vector graphics with Inkscape</p>
-                  <p>3d modeling and animation with Blender</p>
-                  <p>Dubious game design</p>
+                  <ul>
+                    <li>C# in the Unity game engine</li>
+                    <li>Vector graphics with Inkscape</li>
+                    <li>3d modeling and animation with Blender</li>
+                    <li>Dubious game design</li>
+                  </ul>
+                  <a
+                    href="https://play.google.com/store/apps/developer?id=Cartic&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1"
+                    target="_blank"
+                  >
+                    <img
+                      alt="Get it on Google Play"
+                      src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png"
+                    />
+                  </a>
                 </div>
               </div>
             </div>
@@ -143,10 +154,13 @@ const IndexPage = () => {
               <h4>Web Development</h4>
               <div className={indexStyles.flexContent}>
                 <div className={indexStyles.projectDesc}>
-                  <p>Built using modern and responsive techniques</p>
-                  <p>React frameworks such as GatsbyJS</p>
-                  <p>Jekyll for Github Pages sites</p>
-                  <p>Advanced centering of divs</p>
+                  <ul>
+                    <li>Built using modern and responsive techniques</li>
+                    <li>React frameworks such as GatsbyJS</li>
+                    <li>Jekyll for static blog content</li>
+                    <li>Hosting on Github Pages</li>
+                    <li>Advanced centering of divs</li>
+                  </ul>
                 </div>
                 <img className={indexStyles.projectImg} src={webImg} />
               </div>
@@ -193,7 +207,7 @@ const IndexPage = () => {
 
         <Fade up>
           <div className={indexStyles.sectionHeader}>
-            <h1 id="resume">Finally!</h1>
+            <h1 id="resume">Still here?</h1>
           </div>
           <div className={indexStyles.thinSection}>
             <div style={{ width: `100%`, verticalAlign: `center` }}>

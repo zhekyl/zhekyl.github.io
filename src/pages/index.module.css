@@ -158,14 +158,32 @@ html {
   flex-grow: 1;
   width: 220px;
   padding: 16px;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+ul{
+  list-style-type: none;
+  flex-shrink: 1;
+  margin-bottom: 0;
+}
+li{
+  padding-left: 1em;
+  text-indent: -1em;
+}
+li::before {
+  font-weight: 900;
+  content: "+";
+  padding-right: 5px;
 }
 
 .flexContent {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: center;
-  text-align: center;
+  justify-content: flex-start;
+  /* text-align: center; */
 }
 
 .iconButton {
