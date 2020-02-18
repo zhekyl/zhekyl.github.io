@@ -1,12 +1,10 @@
-# Kyle Zheng's personal website
+# Kyle Zheng's Personal Website
 built using gatsbyjs
 ---
-## TODO
-bounce button, functionality + styling
-font awesome? social + button styling
-fix navigation bar
-project carousel
 
-new about section
-new resume + html version
+## Notes
+- Static files need to be capitalized :(
+- GatsbyJS is overkill for SPAs
+- flexbox is **REALLY** useful
+
 
