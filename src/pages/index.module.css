@@ -163,16 +163,16 @@ html {
   justify-content: center;
 }
 
-ul{
+.projectDesc ul{
   list-style-type: none;
   flex-shrink: 1;
   margin-bottom: 0;
 }
-li{
+.projectDesc li{
   padding-left: 1em;
   text-indent: -1em;
 }
-li::before {
+.projectDesc li::before {
   font-weight: 900;
   content: "+";
   padding-right: 5px;

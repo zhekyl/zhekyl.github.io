@@ -5,7 +5,7 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-import React from "react"
+import React, {useState, useEffect} from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
@@ -22,12 +22,15 @@ const Layout = ({ children }) => {
   //     }
   //   }
   // `)
-
+  const [loaded, setLoaded] = useState(false)
+  useEffect(()=>{
+    setLoaded(true)
+  },[])
   return (
     <>
       {/* <Header siteTitle={data.site.siteMetadata.title} /> */}
       <div className = {layoutStyles.content}>
-        <main>{children}</main>
+        <main>{loaded ? children : null}</main>
         <footer>
           {/* © {new Date().getFullYear()}, Built with
           {` `}
