@@ -215,7 +215,7 @@ const IndexPage = () => {
                 If you're interested, take a look at my{" "}
                 <a
                   className={indexStyles.linkButton}
-                  href="/resume.pdf"
+                  href="/Resume.pdf"
                   target="_blank"
                 >
                   resume <FontAwesomeIcon icon={faFile} />
