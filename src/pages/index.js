@@ -16,7 +16,7 @@ import SEO from "../components/seo"
 import Layout from "../components/layout"
 
 import gamesImg from "../assets/images/games.png"
-import webImg from "../assets/images/web.png"
+import webImg from "../assets/images/combined_view.png"
 import buildingsImg from "../assets/images/buildings.png"
 import forkuImg from "../assets/images/forku.png"
 import grapevineImg from "../assets/images/grapevine.png"
@@ -120,7 +120,7 @@ const IndexPage = () => {
           <div className={indexStyles.wideSection}>
             <div
               className={indexStyles.wideSectionContent}
-              style={{ backgroundColor: `#FF6F6140` }}
+              style={{ backgroundColor: `#FF6F6110` }}
             >
               <h4>A Variety of Hypercasual Mobile Games</h4>
               <div className={indexStyles.flexContent}>
@@ -149,16 +149,16 @@ const IndexPage = () => {
           <div className={indexStyles.wideSection}>
             <div
               className={indexStyles.wideSectionContent}
-              style={{ backgroundColor: `#6B5B9540` }}
+              style={{ backgroundColor: `#6B5B9510` }}
             >
               <h4>Web Development</h4>
               <div className={indexStyles.flexContent}>
                 <div className={indexStyles.projectDesc}>
                   <ul>
-                    <li>Built using modern and responsive techniques</li>
-                    <li>React frameworks such as GatsbyJS</li>
-                    <li>Jekyll for static blog content</li>
-                    <li>Hosting on Github Pages</li>
+                    <li>React frameworks such as Gatsby, Next.js</li>
+                    <li>Styling with Material UI, Bootstrap</li>
+                    <li>Jekyll, Mkdocs, Docusaurus for blog-like content</li>
+                    <li>Custom vector graphics <span style={{whiteSpace:"nowrap"}}>(͠≖ ͜ʖ͠≖)👌</span></li>
                     <li>Advanced centering of divs</li>
                   </ul>
                 </div>
@@ -170,7 +170,7 @@ const IndexPage = () => {
           <div className={indexStyles.wideSection}>
             <div
               className={indexStyles.wideSectionContent}
-              style={{ backgroundColor: `#88B04B40` }}
+              style={{ backgroundColor: `#88B04B10` }}
             >
               <h4>Hackathon Projects</h4>
               <div>
@@ -215,7 +215,7 @@ const IndexPage = () => {
                 If you're interested, take a look at my{" "}
                 <a
                   className={indexStyles.linkButton}
-                  href="/Resume.pdf"
+                  href="/resume.pdf"
                   target="_blank"
                 >
                   resume <FontAwesomeIcon icon={faFile} />
