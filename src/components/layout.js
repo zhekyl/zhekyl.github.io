@@ -7,10 +7,14 @@
 
 import React, {useState, useEffect} from "react"
 import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
+// import { useStaticQuery, graphql } from "gatsby"
 
-import "./layout.css"
 import layoutStyles from "./layout.module.css"
+
+// Inline Fontawesome Styles to prevent flashing icons during first page load.
+import { config } from "@fortawesome/fontawesome-svg-core"
+import "@fortawesome/fontawesome-svg-core/styles.css"
+config.autoAddCss = false
 
 const Layout = ({ children }) => {
   // const data = useStaticQuery(graphql`
@@ -22,20 +26,15 @@ const Layout = ({ children }) => {
   //     }
   //   }
   // `)
-  const [loaded, setLoaded] = useState(false)
-  useEffect(()=>{
-    setLoaded(true)
-  },[])
+ 
   return (
     <>
       {/* <Header siteTitle={data.site.siteMetadata.title} /> */}
       <div className = {layoutStyles.content}>
-        <main>{loaded ? children : null}</main>
-        <footer>
-          {/* © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a> */}
-        </footer>
+        <main>{children}</main>
+        {/* <footer className={layoutStyles.footer}>
+          {`© ${new Date().getFullYear()}, Built with <3 by Kyle Zheng`}
+        </footer> */}
       </div>
     </>
   )

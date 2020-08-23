@@ -92,6 +92,8 @@ html {
   .wideSectionContent {
     padding: 20px 24px;
     border-radius: 0;
+    border-left:none;
+    border-right:none;
   }
 }
 

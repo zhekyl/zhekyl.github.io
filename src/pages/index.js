@@ -107,15 +107,39 @@ const IndexPage = () => {
               University. I'm mostly working on dumb projects and occasionally
               some cool stuff also. The rest of the time I'm looking for new
               opportunities to grow, new ideas to{" "}
-              <span className={indexStyles.strike}>copy</span> learn from, and
-              new ways to use technology for questionable purposes.
+              <span className={indexStyles.strike}>shamelessly copy</span> learn
+              from, and new ways to use technology for questionable purposes.
             </p>
           </div>
         </Fade>
 
         <Fade left>
           <div className={indexStyles.sectionHeader}>
-            <h1 id="projects">Projects</h1>
+            <h1 id="projects">Things I've worked on</h1>
+          </div>
+
+          <div className={indexStyles.wideSection}>
+            <div
+              className={indexStyles.wideSectionContent}
+              style={{ backgroundColor: `#6B5B9510` }}
+            >
+              <h4>Web Development</h4>
+              <div className={indexStyles.flexContent}>
+                <div className={indexStyles.projectDesc}>
+                  <ul>
+                    <li>React frameworks such as Gatsby, Next.js</li>
+                    <li>Styling with Material UI, Bootstrap</li>
+                    <li>Jekyll, Mkdocs, Docusaurus for documentation/blog content</li>
+                    <li>
+                      Custom vector graphics{" "}
+                      <span style={{ whiteSpace: "nowrap" }}>(͠≖ ͜ʖ͠≖)👌</span>
+                    </li>
+                    <li>Advanced centering of divs</li>
+                  </ul>
+                </div>
+                <img className={indexStyles.projectImg} src={webImg} />
+              </div>
+            </div>
           </div>
           <div className={indexStyles.wideSection}>
             <div
@@ -145,28 +169,6 @@ const IndexPage = () => {
               </div>
             </div>
           </div>
-
-          <div className={indexStyles.wideSection}>
-            <div
-              className={indexStyles.wideSectionContent}
-              style={{ backgroundColor: `#6B5B9510` }}
-            >
-              <h4>Web Development</h4>
-              <div className={indexStyles.flexContent}>
-                <div className={indexStyles.projectDesc}>
-                  <ul>
-                    <li>React frameworks such as Gatsby, Next.js</li>
-                    <li>Styling with Material UI, Bootstrap</li>
-                    <li>Jekyll, Mkdocs, Docusaurus for blog-like content</li>
-                    <li>Custom vector graphics <span style={{whiteSpace:"nowrap"}}>(͠≖ ͜ʖ͠≖)👌</span></li>
-                    <li>Advanced centering of divs</li>
-                  </ul>
-                </div>
-                <img className={indexStyles.projectImg} src={webImg} />
-              </div>
-            </div>
-          </div>
-
           <div className={indexStyles.wideSection}>
             <div
               className={indexStyles.wideSectionContent}
