@@ -32,7 +32,7 @@ const IndexPage = () => {
           width={`100vw`}
           params={particleParams}
         />
-        <SEO title="Home" />
+        <SEO />
         <div className={indexStyles.fullpage}>
           <div
             className={`${indexStyles.thinSection} ${indexStyles.homeContent}`}
@@ -129,12 +129,23 @@ const IndexPage = () => {
                   <ul>
                     <li>React frameworks such as Gatsby, Next.js</li>
                     <li>Styling with Material UI, Bootstrap</li>
-                    <li>Jekyll, Mkdocs, Docusaurus for documentation/blog content</li>
+                    <li>
+                      Jekyll, Mkdocs, Docusaurus for documentation/blog content
+                    </li>
                     <li>
                       Custom vector graphics{" "}
                       <span style={{ whiteSpace: "nowrap" }}>(͠≖ ͜ʖ͠≖)👌</span>
                     </li>
-                    <li>Advanced centering of divs</li>
+                    <li>
+                      {"Check out -> "}
+                      <a
+                        href="https://www.kgg.gg"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        www.kgg.gg
+                      </a>
+                    </li>
                   </ul>
                 </div>
                 <img className={indexStyles.projectImg} src={webImg} />
@@ -159,6 +170,7 @@ const IndexPage = () => {
                   <a
                     href="https://play.google.com/store/apps/developer?id=Cartic&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1"
                     target="_blank"
+                    rel="noopener noreferrer"
                   >
                     <img
                       alt="Get it on Google Play"

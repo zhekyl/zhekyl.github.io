@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: `Kyle Zheng's Website`,
-    description: `This is Kyle's personal website, built using GatsbyJS.`,
+    title: `Kyle Zheng — A Reasonable Personal Website`,
+    description: `This is Kyle Zheng's personal website that showcases his projects, experiences, interests, and other things.`,
     author: `@zhengkyl`,
   },
   plugins: [
