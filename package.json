@@ -20,6 +20,7 @@
     "gatsby-source-filesystem": "^2.3.30",
     "gatsby-transformer-sharp": "^2.5.15",
     "prop-types": "^15.7.2",
+    "pure-react-carousel": "^1.27.4",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-helmet": "^5.2.1",

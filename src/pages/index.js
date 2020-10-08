@@ -4,8 +4,18 @@ import { graphql } from "gatsby"
 import ReactRotatingText from "react-rotating-text"
 // import Particles from "react-particles-js"
 // import particleParams from "../assets/json/particleParams.json"
-// import { Carousel } from "react-responsive-carousel"
-// import "react-responsive-carousel/lib/styles/carousel.min.css"
+
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+import { Carousel } from 'react-responsive-carousel';
+
+import {
+  CarouselProvider,
+  Slider,
+  Slide,
+  ButtonBack,
+  ButtonNext,
+} from "pure-react-carousel"
+import "pure-react-carousel/dist/react-carousel.es.css"
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faChevronDown, faFile } from "@fortawesome/free-solid-svg-icons"
@@ -15,6 +25,7 @@ import indexStyles from "./index.module.css"
 import SEO from "../components/seo"
 import Layout from "../components/layout"
 import ProjectCard from "../components/projectCard"
+import ProjectBlock from "../components/projectBlock"
 
 // import gamesImg from "../assets/images/games.png"
 // import webImg from "../assets/images/combined_view.png"
@@ -22,8 +33,15 @@ import buildingsImg from "../assets/images/buildings.png"
 import forkuImg from "../assets/images/forku.png"
 import grapevineImg from "../assets/images/grapevine.png"
 import hackerheroImg from "../assets/images/hackerhero.png"
-
+import { makeStyles, Typography } from "@material-ui/core"
+const useStyles = makeStyles(theme => ({
+  projectsRow: {
+    display: "flex",
+    flexWrap: "wrap",
+  },
+}))
 const IndexPage = ({ data }) => {
+  const classes = useStyles()
   return (
     <>
       <Layout>
@@ -81,8 +99,15 @@ const IndexPage = ({ data }) => {
           </div>
         </div>
 
-        {/* <Fade up> */}
-        <h1 id="about">Hey there!</h1>
+        <div style={{ textAlign: "right" }}>
+          <Typography variant="h2" id="about">
+            Decades of life experience
+          </Typography>
+          <Typography variant="subtitle2" component="span">
+            -me, 2020
+          </Typography>
+        </div>
+
         <div>
           <p>
             I'm currently studying{" "}
@@ -95,75 +120,125 @@ const IndexPage = ({ data }) => {
             from, and new ways to use technology for questionable purposes.
           </p>
         </div>
-        {/* </Fade> */}
 
-        {/* <Fade left> */}
-        <h1 id="projects">Things I've worked on</h1>
-        <div style={{ display: "flex", flexWrap: "wrap" }}>
-          <ProjectCard
+        <div>
+          <Typography variant="h2" id="projects">
+            Unbelievably amazing projects
+          </Typography>
+          <Typography variant="subtitle2" component="span">
+            -me, 2020
+          </Typography>
+        </div>
+
+        <div className={classes.projectsRow}>
+          <ProjectBlock
             fluidImgSrc={data.kgg_website.childImageSharp.fluid}
             title="kgg.gg"
             style={{
               flex: 3,
               minWidth: 300,
+              // backgroundImage: "linear-gradient(-45deg, #DC143C99, #DC143C20)",
+              color: "crimson",
             }}
           >
             Kappa Gamma Gamma is an inclusive gaming fraternity. Their website
             is really damn cool.
-          </ProjectCard>
-          <ProjectCard
+            <a
+              href="https://www.kgg.gg"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              kgg
+            </a>
+          </ProjectBlock>
+          <ProjectBlock
             fluidImgSrc={data.mobile_games.childImageSharp.fluid}
             title="KGG"
             style={{
               flex: 2,
               minWidth: 200,
+              // backgroundImage: "linear-gradient(-45deg, #AEF78E, #AEF78E20)",
+              alignSelf: "flex-end",
             }}
           >
-            Here is some text for this thing
-          </ProjectCard>
+            Here is some text for this thing. a;dsjf; a as dfasd fawej f'asdf
+            asf awe sd f aew a sdf awef asef
+          </ProjectBlock>
         </div>
-        <div style={{ display: "flex", flexWrap: "wrap" }}>
-          <ProjectCard
+        <div className={classes.projectsRow}>
+          <ProjectBlock
             fluidImgSrc={data.kgg_website.childImageSharp.fluid}
             title="KGG"
             style={{
               flex: 2,
               minWidth: 200,
+              // backgroundImage: "linear-gradient(-45deg, #CAFFB9, #CAFFB920)",
             }}
           >
             Here is some text for this thing
-          </ProjectCard>
-          <ProjectCard
+          </ProjectBlock>
+          <ProjectBlock
             fluidImgSrc={data.kgg_website.childImageSharp.fluid}
             title="KGG"
             style={{
               flex: 3,
               minWidth: 300,
+              // backgroundImage: "linear-gradient(-45deg, #66A182, #66A18220)",
             }}
           >
             Here is some text for this thing
-          </ProjectCard>
+          </ProjectBlock>
+        </div>
+        <div style={{ textAlign: "right" }}>
+          <Typography variant="h2" id="about">
+            Believably amazing projects
+          </Typography>
+          <Typography variant="subtitle2" component="span">
+            -me, 2020
+          </Typography>
         </div>
 
-        <div style={{ display: "flex", flexWrap: "wrap" }}>
-          <div>
-            <h4>Web Development</h4>
-            {/* <img className={indexStyles.projectImg} src={webImg} /> */}
-            <div>
-              {"Check out -> "}
-              <a
-                href="https://www.kgg.gg"
-                target="_blank"
-                rel="noopener noreferrer"
+        <CarouselProvider
+          totalSlides={4}
+          visibleSlides={2}
+          // naturalSlideWidth={100}
+          // naturalSlideHeight={125}
+          isIntrinsicHeight={true}
+          // style={{maxWidth:500}}
+        >
+          <Slider>
+            <Slide index={0}>
+              
+            </Slide>
+            <Slide index={1}>
+              <ProjectCard
+                title="project mini"
+                fluidImgSrc={data.kgg_website.childImageSharp.fluid}
               >
-                www.kgg.gg
-              </a>
-            </div>
-          </div>
+                test 1
+              </ProjectCard>
+            </Slide>
+            <Slide index={2}>
+              <ProjectCard
+                title="project mini"
+                fluidImgSrc={data.kgg_website.childImageSharp.fluid}
+              >
+                test 1
+              </ProjectCard>
+            </Slide>
+            <Slide index={3}>
+              <ProjectCard
+                title="project mini"
+                fluidImgSrc={data.kgg_website.childImageSharp.fluid}
+              >
+                test 1
+              </ProjectCard>
+            </Slide>
+          </Slider>
+        </CarouselProvider>
 
-          <div>
+        {/* <div>
             <h4>A Variety of Hypercasual Mobile Games</h4>
-            {/* <img className={indexStyles.projectImg} src={gamesImg} /> */}
             <div>
               <a
                 href="https://play.google.com/store/apps/developer?id=Cartic&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1"
@@ -176,40 +251,24 @@ const IndexPage = ({ data }) => {
                 />
               </a>
             </div>
-          </div>
-        </div>
+          </div> */}
 
-        <h4>Hackathon Projects</h4>
+        {/* <h4>Hackathon Projects</h4>
         <div>
-          {/* <Carousel
-              infiniteLoop={true}
-              dynamicHeight={true}
-              showThumbs={false}
-            > */}
-          <div>
-            <img src={buildingsImg} />
-            <p className="legend">
-              Indoor pathfinding/navigation using node maps
-            </p>
-          </div>
-          <div>
-            <img src={forkuImg} />
-            <p className="legend">Fork crowdshare service concept</p>
-          </div>
-          <div>
-            <img src={grapevineImg} />
-            <p className="legend">Proximity based Bluetooth messaging app</p>
-          </div>
-          <div>
-            <img src={hackerheroImg} />
-            <p className="legend">Rhythm game using Youtube videos</p>
-          </div>
-          {/* </Carousel> */}
-        </div>
-        {/* </Fade> */}
+          <img src={buildingsImg} />
+          <img src={forkuImg} />
+          <img src={grapevineImg} />
+          <img src={hackerheroImg} />
+        </div> */}
 
-        {/* <Fade up> */}
-        <h1 id="resume">Still here?</h1>
+        <div>
+          <Typography variant="h2" id="projects">
+            If I could, I'd hire him twice!
+          </Typography>
+          <Typography variant="subtitle2" component="span">
+            -me, 2020
+          </Typography>
+        </div>
         <div>
           <div style={{ width: `100%`, verticalAlign: `center` }}>
             <p>

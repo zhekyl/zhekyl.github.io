@@ -21,12 +21,11 @@ const useStyles = makeStyles(theme => ({
     marginTop: 0,
   },
   image: {
-    flex: 1,
+    // flex: 1,
   },
   card:{
     borderRadius: theme.spacing(1.5),
     marginTop: theme.spacing(1),
-    display:"flex",
   },
 
   linksArea: {
@@ -34,13 +33,15 @@ const useStyles = makeStyles(theme => ({
   },
 }))
 
-const ProjectCard = ({ title, fluidImgSrc, children, style }) => {
+const ProjectBlock = ({ title, fluidImgSrc, children, style }) => {
   const classes = useStyles()
   return (
+    <div style={style} className={classes.whole}>
       <Card className={classes.card}>
         <Img fluid={fluidImgSrc} className={classes.image} />
-        <div>
-          <CardContent>
+      </Card>
+      <Card className={classes.card}>
+        <CardContent>
           <Typography variant="h3">{title}</Typography>
           <Typography variant="body2">{children}</Typography>
         </CardContent>
@@ -52,10 +53,9 @@ const ProjectCard = ({ title, fluidImgSrc, children, style }) => {
             kgg.gg
           </Button>
         </CardActions>
-        </div>
-        
       </Card>
+    </div>
   )
 }
 
-export default ProjectCard
+export default ProjectBlock
