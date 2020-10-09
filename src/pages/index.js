@@ -5,18 +5,6 @@ import ReactRotatingText from "react-rotating-text"
 // import Particles from "react-particles-js"
 // import particleParams from "../assets/json/particleParams.json"
 
-import "react-responsive-carousel/lib/styles/carousel.min.css";
-import { Carousel } from 'react-responsive-carousel';
-
-import {
-  CarouselProvider,
-  Slider,
-  Slide,
-  ButtonBack,
-  ButtonNext,
-} from "pure-react-carousel"
-import "pure-react-carousel/dist/react-carousel.es.css"
-
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faChevronDown, faFile } from "@fortawesome/free-solid-svg-icons"
 import { faGithub, faLinkedin, faDev } from "@fortawesome/free-brands-svg-icons"
@@ -24,8 +12,8 @@ import { faGithub, faLinkedin, faDev } from "@fortawesome/free-brands-svg-icons"
 import indexStyles from "./index.module.css"
 import SEO from "../components/seo"
 import Layout from "../components/layout"
-import ProjectCard from "../components/projectCard"
-import ProjectBlock from "../components/projectBlock"
+import ProjectCarousel from "../components/index/ProjectCarousel"
+import ProjectDisplay from "../components/index/projectDisplay"
 
 // import gamesImg from "../assets/images/games.png"
 // import webImg from "../assets/images/combined_view.png"
@@ -34,18 +22,14 @@ import forkuImg from "../assets/images/forku.png"
 import grapevineImg from "../assets/images/grapevine.png"
 import hackerheroImg from "../assets/images/hackerhero.png"
 import { makeStyles, Typography } from "@material-ui/core"
-const useStyles = makeStyles(theme => ({
-  projectsRow: {
-    display: "flex",
-    flexWrap: "wrap",
-  },
-}))
+
+const useStyles = makeStyles(theme => ({}))
 const IndexPage = ({ data }) => {
   const classes = useStyles()
   return (
     <>
       <Layout>
-        <SEO />
+        <SEO title="test title" />
         <div>
           <div
             style={{
@@ -99,9 +83,31 @@ const IndexPage = ({ data }) => {
           </div>
         </div>
 
+        <div>
+          <Typography variant="h2" id="projects">
+            Not like the other boys
+          </Typography>
+          <Typography variant="subtitle2" component="span">
+            -me, 2020
+          </Typography>
+        </div>
+
+        <Typography variant="body1">
+          I am a heterosexual asian male studying{" "}
+          <span className={indexStyles.highlight}>computer science</span> and{" "}
+          <span className={indexStyles.highlight}>math</span> at Purdue
+          University.
+        </Typography>
+
+        <Typography variant="body1">
+          When I'm not subverting societal expectations and defying gender
+          norms, I'm mostly working on dumb projects or thinking about dumber
+          projects to start.
+        </Typography>
+
         <div style={{ textAlign: "right" }}>
           <Typography variant="h2" id="about">
-            Decades of life experience
+            Loves paying income taxes
           </Typography>
           <Typography variant="subtitle2" component="span">
             -me, 2020
@@ -109,16 +115,9 @@ const IndexPage = ({ data }) => {
         </div>
 
         <div>
-          <p>
-            I'm currently studying{" "}
-            <span className={indexStyles.highlight}>computer science</span> and{" "}
-            <span className={indexStyles.highlight}>math</span> at Purdue
-            University. I'm mostly working on dumb projects and occasionally
-            some cool stuff also. The rest of the time I'm looking for new
-            opportunities to grow, new ideas to{" "}
-            <span className={indexStyles.strike}>shamelessly copy</span> learn
-            from, and new ways to use technology for questionable purposes.
-          </p>
+          <Typography variant="body1">
+            Purdue Cognition and Learning Laboratory - Web Programmer
+          </Typography>
         </div>
 
         <div>
@@ -130,65 +129,8 @@ const IndexPage = ({ data }) => {
           </Typography>
         </div>
 
-        <div className={classes.projectsRow}>
-          <ProjectBlock
-            fluidImgSrc={data.kgg_website.childImageSharp.fluid}
-            title="kgg.gg"
-            style={{
-              flex: 3,
-              minWidth: 300,
-              // backgroundImage: "linear-gradient(-45deg, #DC143C99, #DC143C20)",
-              color: "crimson",
-            }}
-          >
-            Kappa Gamma Gamma is an inclusive gaming fraternity. Their website
-            is really damn cool.
-            <a
-              href="https://www.kgg.gg"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              kgg
-            </a>
-          </ProjectBlock>
-          <ProjectBlock
-            fluidImgSrc={data.mobile_games.childImageSharp.fluid}
-            title="KGG"
-            style={{
-              flex: 2,
-              minWidth: 200,
-              // backgroundImage: "linear-gradient(-45deg, #AEF78E, #AEF78E20)",
-              alignSelf: "flex-end",
-            }}
-          >
-            Here is some text for this thing. a;dsjf; a as dfasd fawej f'asdf
-            asf awe sd f aew a sdf awef asef
-          </ProjectBlock>
-        </div>
-        <div className={classes.projectsRow}>
-          <ProjectBlock
-            fluidImgSrc={data.kgg_website.childImageSharp.fluid}
-            title="KGG"
-            style={{
-              flex: 2,
-              minWidth: 200,
-              // backgroundImage: "linear-gradient(-45deg, #CAFFB9, #CAFFB920)",
-            }}
-          >
-            Here is some text for this thing
-          </ProjectBlock>
-          <ProjectBlock
-            fluidImgSrc={data.kgg_website.childImageSharp.fluid}
-            title="KGG"
-            style={{
-              flex: 3,
-              minWidth: 300,
-              // backgroundImage: "linear-gradient(-45deg, #66A182, #66A18220)",
-            }}
-          >
-            Here is some text for this thing
-          </ProjectBlock>
-        </div>
+        <ProjectDisplay imageSources={data} />
+
         <div style={{ textAlign: "right" }}>
           <Typography variant="h2" id="about">
             Believably amazing projects
@@ -198,44 +140,7 @@ const IndexPage = ({ data }) => {
           </Typography>
         </div>
 
-        <CarouselProvider
-          totalSlides={4}
-          visibleSlides={2}
-          // naturalSlideWidth={100}
-          // naturalSlideHeight={125}
-          isIntrinsicHeight={true}
-          // style={{maxWidth:500}}
-        >
-          <Slider>
-            <Slide index={0}>
-              
-            </Slide>
-            <Slide index={1}>
-              <ProjectCard
-                title="project mini"
-                fluidImgSrc={data.kgg_website.childImageSharp.fluid}
-              >
-                test 1
-              </ProjectCard>
-            </Slide>
-            <Slide index={2}>
-              <ProjectCard
-                title="project mini"
-                fluidImgSrc={data.kgg_website.childImageSharp.fluid}
-              >
-                test 1
-              </ProjectCard>
-            </Slide>
-            <Slide index={3}>
-              <ProjectCard
-                title="project mini"
-                fluidImgSrc={data.kgg_website.childImageSharp.fluid}
-              >
-                test 1
-              </ProjectCard>
-            </Slide>
-          </Slider>
-        </CarouselProvider>
+        <ProjectCarousel imageSources={data} />
 
         {/* <div>
             <h4>A Variety of Hypercasual Mobile Games</h4>
@@ -252,14 +157,6 @@ const IndexPage = ({ data }) => {
               </a>
             </div>
           </div> */}
-
-        {/* <h4>Hackathon Projects</h4>
-        <div>
-          <img src={buildingsImg} />
-          <img src={forkuImg} />
-          <img src={grapevineImg} />
-          <img src={hackerheroImg} />
-        </div> */}
 
         <div>
           <Typography variant="h2" id="projects">

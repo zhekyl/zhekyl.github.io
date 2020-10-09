@@ -14,34 +14,30 @@ import GitHubIcon from "@material-ui/icons/GitHub"
 import WebIcon from "@material-ui/icons/WebAsset"
 
 const useStyles = makeStyles(theme => ({
-  whole:{
-    // margin:theme.spacing(2),
-    margin:theme.spacing(1),
-
-    marginTop: 0,
-  },
   image: {
     flex: 1,
   },
-  card:{
+  card: {
     borderRadius: theme.spacing(1.5),
     marginTop: theme.spacing(1),
-    display:"flex",
+    display: "flex",
   },
-
+  content:{
+    width:"100%"
+  },
   linksArea: {
     flexDirection: "row-reverse",
   },
 }))
 
-const ProjectCard = ({ title, fluidImgSrc, children, style }) => {
+const ProjectCard = ({ title, fluidImgSrc, children, githubLink }) => {
   const classes = useStyles()
   return (
-      <Card className={classes.card}>
-        <Img fluid={fluidImgSrc} className={classes.image} />
-        <div>
-          <CardContent>
-          <Typography variant="h3">{title}</Typography>
+    <Card className={classes.card}>
+      {fluidImgSrc && <Img fluid={fluidImgSrc} className={classes.image} />}
+      <div className={classes.content}>
+        <CardContent>
+          <Typography variant="h4">{title}</Typography>
           <Typography variant="body2">{children}</Typography>
         </CardContent>
         <CardActions className={classes.linksArea}>
@@ -52,9 +48,8 @@ const ProjectCard = ({ title, fluidImgSrc, children, style }) => {
             kgg.gg
           </Button>
         </CardActions>
-        </div>
-        
-      </Card>
+      </div>
+    </Card>
   )
 }
 

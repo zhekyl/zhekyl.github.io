@@ -1,0 +1,44 @@
+top: 
+  - name: justjoshin
+    title: justjoshin
+    desc: >
+      Campaign website for Residential Hall Election
+    github: www.tadsfasdfwraw
+  - name: grapevine
+    title: grapevine
+    desc: >
+      Proximity-based bluetooth messaging app. Anonymous and decentralized.
+    github: https://github.com/JHsu01/MHACKS12
+  - name: forku
+    title: forkU
+    desc: >
+      Proof of concept for a silverware sharing service
+    github: https://github.com/ji-chartsiri/ForkU
+  - name: synonym_suggester
+    title: synonym suggester
+    desc: >
+      A Google Docs Plugin to suggest alternatives for frequently used words
+    github: https://github.com/zhengkyl/synonym-suggester
+bottom:
+  - name: hacker_hero
+    title: hacker hero
+    desc: >
+      Rhythm game using youtube videos and randomly generated beatmaps.
+    github: https://github.com/zhengkyl/hacker-hero
+  - name: personal_website
+    title: my personal website
+    desc: >
+      The website you are currently on. Crazy.
+    github: https://github.com/zhengkyl/zhengkyl.github.io
+  - name: moviegraph
+    title: moviegraph
+    desc: >
+      Visualizing movies as connected graphs
+    github: https://github.com/zhengkyl/moviegraph
+  - name: kgg-web
+    title: kgg website concept
+    desc: >
+      An unused version of kgg.gg using Next.js and stuff.
+    github: https://github.com/zhengkyl/kgg-mockup
+
+
