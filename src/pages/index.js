@@ -19,12 +19,15 @@ import buildingsImg from "../assets/images/buildings.png"
 import forkuImg from "../assets/images/forku.png"
 import grapevineImg from "../assets/images/grapevine.png"
 import hackerheroImg from "../assets/images/hackerhero.png"
-import { makeStyles, Typography } from "@material-ui/core"
+import { Button, IconButton, makeStyles, Typography } from "@material-ui/core"
 
 import LinkedInIcon from "@material-ui/icons/LinkedIn"
+import GitHubIcon from '@material-ui/icons/GitHub';
+
 
 import ResumeIcon from "@material-ui/icons/Description"
 import ExperienceTimeline from "../components/index/experienceTimeline"
+import QuoteHeader from "../components/quoteHeader"
 
 const useStyles = makeStyles(theme => ({}))
 const IndexPage = ({ data }) => {
@@ -36,40 +39,28 @@ const IndexPage = ({ data }) => {
         <div>
           <Typography variant="h1">Kyle Zheng</Typography>
 
-          <Typography variant="h4">He's cool, I promise</Typography>
+          <Button variant="outlined">About</Button>
+          <Button variant="outlined">Experience</Button>
+          <Button variant="outlined">Projects</Button>
+          <Button variant="outlined">Resume</Button>
 
+        <IconButton>
+          <GitHubIcon fontSize="large"/>
+        </IconButton>
+        <IconButton>
+          <LinkedInIcon fontSize="large"/>
+        </IconButton>
           {/* href="https://github.com/zhengkyl"
                 href="https://devpost.com/zhengkyl"
 
                 href="https://www.linkedin.com/in/kyle-zheng-9b2546145/" */}
         </div>
-        {/* <div id={indexStyles.tagline}>
-            <p>
-              is
-              <ReactRotatingText
-                items={[
-                  "a developer",
-                  "a cool guy in general",
-                  "not like the other boys",
-                ]}
-                cursor={false}
-                className={indexStyles.rotatingText}
-                color={`crimson`}
-                emptyPause={250}
-                deletingInterval={25}
-              />
-            </p>
-          </div> */}
 
-        <div>
-        <Typography variant="h2" id="projects">
-        Not like the other boys
-      </Typography>
-      <Typography variant="subtitle2" component="span">
-        -me, 2020
-      </Typography>
-          
-        </div>
+        <QuoteHeader
+          title="Not like the other boys"
+          subtext="-me, 2020"
+          id="about"
+        />
 
         <Typography variant="body1">
           I am a heterosexual asian male studying{" "}
@@ -84,37 +75,27 @@ const IndexPage = ({ data }) => {
           projects to start.
         </Typography>
 
-        <div style={{ textAlign: "right" }}>
-          <Typography variant="h2" id="about">
-            Loves paying income taxes
-          </Typography>
-          <Typography variant="subtitle2" component="span">
-            -me, 2020
-          </Typography>
-        </div>
+        <QuoteHeader
+          right
+          title="Loves paying income taxes"
+          subtext="-me, 2020"
+          id="experience"
+        />
+        <ExperienceTimeline />
 
-        <ExperienceTimeline/>
-       
-        <div>
-          <Typography variant="h2" id="projects">
-            Unbelievably amazing projects
-          </Typography>
-          <Typography variant="subtitle2" component="span">
-            -me, 2020
-          </Typography>
-        </div>
-
+        <QuoteHeader
+          title="Unbelievably amazing projects"
+          subtext="-me, 2020"
+          id="projects"
+        />
         <ProjectDisplay imageSources={data} />
 
-        <div style={{ textAlign: "right" }}>
-          <Typography variant="h2" id="about">
-            Believably amazing projects
-          </Typography>
-          <Typography variant="subtitle2" component="span">
-            -me, 2020
-          </Typography>
-        </div>
-
+        <QuoteHeader
+          right
+          title="Believably amazing projects"
+          subtext="-me, 2020"
+          id="projects2"
+        />
         <ProjectCarousel imageSources={data} />
 
         {/* <div>
@@ -133,27 +114,16 @@ const IndexPage = ({ data }) => {
             </div>
           </div> */}
 
+        <QuoteHeader
+          title="If I could, I'd hire him twice!"
+          subtext="-me, 2020"
+          id="hire"
+        />
+
         <div>
-          <Typography variant="h2" id="projects">
-            If I could, I'd hire him twice!
+          <Typography variant="body1">
+            I'm currently looking for internships for Summer 2021.
           </Typography>
-          <Typography variant="subtitle2" component="span">
-            -me, 2020
-          </Typography>
-        </div>
-        <div>
-          <div style={{ width: `100%`, verticalAlign: `center` }}>
-            <p>
-              If you're interested, take a look at my{" "}
-              <a
-                className={indexStyles.linkButton}
-                href="/Resume.pdf"
-                target="_blank"
-              >
-                resume <ResumeIcon />
-              </a>
-            </p>
-          </div>
         </div>
       </Layout>
     </>

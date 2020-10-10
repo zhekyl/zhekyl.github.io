@@ -16,9 +16,8 @@ import WebIcon from "@material-ui/icons/WebAsset"
 const useStyles = makeStyles(theme => ({
   whole:{
     // margin:theme.spacing(2),
-    margin:theme.spacing(1),
-
-    marginTop: 0,
+    margin:theme.spacing(2),
+    marginTop: theme.spacing(1),
   },
   image: {
     // flex: 1,
