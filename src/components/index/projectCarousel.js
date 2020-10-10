@@ -12,6 +12,7 @@ import ProjectCard from "../projectCard"
 
 import projectData from "../../content/projectCarousel.yml"
 import ArrowForwardIcon from '@material-ui/icons/ArrowForwardIos';
+
 const useStyles = makeStyles(theme => ({
   button: {
     borderRadius:"50%",

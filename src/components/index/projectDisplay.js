@@ -3,19 +3,25 @@ import { makeStyles, Typography } from "@material-ui/core"
 import ProjectBlock from "../../components/projectBlock"
 
 import projectData from "../../content/projectDisplay.yml"
+import BubbleSvg from "../../assets/svgs/bubbles.svg"
 
 const useStyles = makeStyles(theme => ({
   projectsRow: {
     display: "flex",
     flexWrap: "wrap",
   },
+  bubbles:{
+    position:"absolute",
+    zIndex:-1,
+  }
 }))
 // useStaticQuery has some bugs, so gatsby image queries are being sent down from the parent
 // Hopefully replace with static queries when bugs resolved.
 const ProjectDisplay = ({imageSources}) => {
   const classes = useStyles()
   return (
-    <>
+    <div>
+      {/* <BubbleSvg className={classes.bubbles}/> */}
       <div className={classes.projectsRow}>
         <ProjectBlock
           fluidImgSrc={imageSources.kgg_website.childImageSharp.fluid}
@@ -75,7 +81,7 @@ const ProjectDisplay = ({imageSources}) => {
           Here is some text for this thing
         </ProjectBlock>
       </div>
-    </>
+    </div>
   )
 }
 

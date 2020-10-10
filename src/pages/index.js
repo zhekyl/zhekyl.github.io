@@ -2,12 +2,10 @@ import React from "react"
 import { graphql } from "gatsby"
 // import Fade from "react-reveal/Fade"
 import ReactRotatingText from "react-rotating-text"
-// import Particles from "react-particles-js"
-// import particleParams from "../assets/json/particleParams.json"
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faChevronDown, faFile } from "@fortawesome/free-solid-svg-icons"
-import { faGithub, faLinkedin, faDev } from "@fortawesome/free-brands-svg-icons"
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+// import { faChevronDown, faFile } from "@fortawesome/free-solid-svg-icons"
+// import { faGithub, faLinkedin, faDev } from "@fortawesome/free-brands-svg-icons"
 
 import indexStyles from "./index.module.css"
 import SEO from "../components/seo"
@@ -23,6 +21,11 @@ import grapevineImg from "../assets/images/grapevine.png"
 import hackerheroImg from "../assets/images/hackerhero.png"
 import { makeStyles, Typography } from "@material-ui/core"
 
+import LinkedInIcon from "@material-ui/icons/LinkedIn"
+
+import ResumeIcon from "@material-ui/icons/Description"
+import ExperienceTimeline from "../components/index/experienceTimeline"
+
 const useStyles = makeStyles(theme => ({}))
 const IndexPage = ({ data }) => {
   const classes = useStyles()
@@ -31,40 +34,16 @@ const IndexPage = ({ data }) => {
       <Layout>
         <SEO title="test title" />
         <div>
-          <div
-            style={{
-              display: `flex`,
-              alignItems: `center`,
-              justifyContent: `space-between`,
-            }}
-          >
-            <h1>Kyle Zheng</h1>
+          <Typography variant="h1">Kyle Zheng</Typography>
 
-            <div style={{ textAlign: `right` }}>
-              <a
-                className={indexStyles.iconButton}
-                href="https://github.com/zhengkyl"
-                target="_blank"
-              >
-                <FontAwesomeIcon icon={faGithub} />
-              </a>
-              <a
-                className={indexStyles.iconButton}
+          <Typography variant="h4">He's cool, I promise</Typography>
+
+          {/* href="https://github.com/zhengkyl"
                 href="https://devpost.com/zhengkyl"
-                target="_blank"
-              >
-                <FontAwesomeIcon icon={faDev} />
-              </a>
-              <a
-                className={indexStyles.iconButton}
-                href="https://www.linkedin.com/in/kyle-zheng-9b2546145/"
-                target="_blank"
-              >
-                <FontAwesomeIcon icon={faLinkedin} />
-              </a>
-            </div>
-          </div>
-          <div id={indexStyles.tagline}>
+
+                href="https://www.linkedin.com/in/kyle-zheng-9b2546145/" */}
+        </div>
+        {/* <div id={indexStyles.tagline}>
             <p>
               is
               <ReactRotatingText
@@ -80,16 +59,16 @@ const IndexPage = ({ data }) => {
                 deletingInterval={25}
               />
             </p>
-          </div>
-        </div>
+          </div> */}
 
         <div>
-          <Typography variant="h2" id="projects">
-            Not like the other boys
-          </Typography>
-          <Typography variant="subtitle2" component="span">
-            -me, 2020
-          </Typography>
+        <Typography variant="h2" id="projects">
+        Not like the other boys
+      </Typography>
+      <Typography variant="subtitle2" component="span">
+        -me, 2020
+      </Typography>
+          
         </div>
 
         <Typography variant="body1">
@@ -114,12 +93,8 @@ const IndexPage = ({ data }) => {
           </Typography>
         </div>
 
-        <div>
-          <Typography variant="body1">
-            Purdue Cognition and Learning Laboratory - Web Programmer
-          </Typography>
-        </div>
-
+        <ExperienceTimeline/>
+       
         <div>
           <Typography variant="h2" id="projects">
             Unbelievably amazing projects
@@ -175,42 +150,11 @@ const IndexPage = ({ data }) => {
                 href="/Resume.pdf"
                 target="_blank"
               >
-                resume <FontAwesomeIcon icon={faFile} />
+                resume <ResumeIcon />
               </a>
             </p>
           </div>
-          <div
-            style={{
-              display: `flex`,
-              justifyContent: `flex-end`,
-            }}
-          >
-            <div style={{ textAlign: `right` }}>
-              <a
-                className={indexStyles.iconButton}
-                href="https://github.com/zhengkyl"
-                target="_blank"
-              >
-                <FontAwesomeIcon icon={faGithub} />
-              </a>
-              <a
-                className={indexStyles.iconButton}
-                href="https://devpost.com/zhengkyl"
-                target="_blank"
-              >
-                <FontAwesomeIcon icon={faDev} />
-              </a>
-              <a
-                className={indexStyles.iconButton}
-                href="https://www.linkedin.com/in/kyle-zheng-9b2546145/"
-                target="_blank"
-              >
-                <FontAwesomeIcon icon={faLinkedin} />
-              </a>
-            </div>
-          </div>
         </div>
-        {/* </Fade> */}
       </Layout>
     </>
   )
