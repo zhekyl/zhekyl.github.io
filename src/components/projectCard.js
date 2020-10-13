@@ -37,7 +37,7 @@ const ProjectCard = ({ title, fluidImgSrc, children, githubLink }) => {
       {fluidImgSrc && <Img fluid={fluidImgSrc} className={classes.image} />}
       <div className={classes.content}>
         <CardContent>
-          <Typography variant="h4">{title}</Typography>
+          <Typography variant="h5">{title}</Typography>
           <Typography variant="body2">{children}</Typography>
         </CardContent>
         <CardActions className={classes.linksArea}>

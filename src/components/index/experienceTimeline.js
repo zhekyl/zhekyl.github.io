@@ -1,7 +1,9 @@
 import React from "react"
 import {
+  Button,
   Card,
   CardContent,
+  CardActions,
   Container,
   makeStyles,
   Typography,
@@ -15,6 +17,28 @@ import {
   TimelineContent,
   TimelineOppositeContent,
 } from "@material-ui/lab"
+
+const useStyles = makeStyles(theme => ({
+  container: {
+    maxWidth: 600,
+    margin: "auto",
+  },
+  timeline: {
+    padding: 0,
+    "& li::before": {
+      flex: "none",
+      padding: 0,
+    },
+  },
+  cardBottomRow:{
+    justifyContent:"space-between"
+  },
+  card:{
+    borderRadius:theme.spacing(1.5),
+    textAlign:"left",
+  }
+
+}))
 
 const TimelineItemWrapper = ({ children, last, opposite }) => (
   <TimelineItem>
@@ -31,40 +55,30 @@ const TimelineItemWrapper = ({ children, last, opposite }) => (
   </TimelineItem>
 )
 
-const TimelineCard = ({year, location, position}) => (
-  <div
-    style={{
-      display: "flex",
-      alignItems: "start",
-      justifyContent: "space-between",
-    }}
-  >
-    {year && <Typography variant="h4" style={{writingMode: "vertical-lr",}}>
-      {year}
-    </Typography>}
-    <Card>
+const TimelineCard = ({ year, location, position }) => {
+  const classes = useStyles()
+  return (
+    <Card className={classes.card}>
       <CardContent>
-        <Typography variant="h4" style={{textAlign:"left"}}>{location}</Typography>
+        <Typography variant="h4">{location}</Typography>
         <Typography variant="h5">{position}</Typography>
+        <Typography variant="body1">
+          hello there this is the boyd of the doaijfa and this is waht i did
+          there for your info
+        </Typography>
       </CardContent>
+      <CardActions className={classes.cardBottomRow}>
+        <Button>
+          learn more
+        </Button>
+        <Typography variant="subtitle1">
+          May 2020 - Current
+        </Typography>
+      </CardActions>
     </Card>
-  </div>
-)
+  )
+}
 
-const useStyles = makeStyles(theme => ({
-  container: {
-    maxWidth: 600,
-    margin: "auto",
-  },
-  timeline: {
-    // margin:"auto",
-    padding: 0,
-    "& li::before": {
-      flex: "none",
-      padding: 0,
-    },
-  },
-}))
 const ExperienceTimeline = () => {
   const classes = useStyles()
   return (
@@ -74,10 +88,18 @@ const ExperienceTimeline = () => {
           <Typography variant="h6">Birth</Typography>
         </TimelineItemWrapper>
         <TimelineItemWrapper>
-          <TimelineCard year="2019" location="Windsor Dining Court" position="Student Associate"/>
+          <TimelineCard
+            year="2019"
+            location="Windsor Dining Court"
+            position="Student Associate"
+          />
         </TimelineItemWrapper>
         <TimelineItemWrapper>
-          <TimelineCard year="2020" location = "Cognition and Learning Lab" position = "Web Programmer"/>
+          <TimelineCard
+            year="2020"
+            location="Cognition and Learning Lab"
+            position="Web Programmer"
+          />
         </TimelineItemWrapper>
         <TimelineItem>
           <Typography variant="h6">Present</Typography>

@@ -4,7 +4,8 @@ built using gatsbyjs
 
 ## Notes
 - Static files need to be capitalized :(
-- GatsbyJS is overkill for SPAs
-- flexbox is **REALLY** useful
+
+
+- project display min width too big for mobile?
 
 

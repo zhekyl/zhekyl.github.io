@@ -1,5 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
+import Img from "gatsby-image"
 // import Fade from "react-reveal/Fade"
 import ReactRotatingText from "react-rotating-text"
 
@@ -10,8 +11,9 @@ import ReactRotatingText from "react-rotating-text"
 import indexStyles from "./index.module.css"
 import SEO from "../components/seo"
 import Layout from "../components/layout"
-import ProjectCarousel from "../components/index/ProjectCarousel"
+import ProjectCarousel from "../components/index/projectCarousel"
 import ProjectDisplay from "../components/index/projectDisplay"
+import ProfileCard from "../components/profileCard"
 
 // import gamesImg from "../assets/images/games.png"
 // import webImg from "../assets/images/combined_view.png"
@@ -19,11 +21,18 @@ import buildingsImg from "../assets/images/buildings.png"
 import forkuImg from "../assets/images/forku.png"
 import grapevineImg from "../assets/images/grapevine.png"
 import hackerheroImg from "../assets/images/hackerhero.png"
-import { Button, IconButton, makeStyles, Typography } from "@material-ui/core"
+import {
+  Button,
+  Card,
+  CardContent,
+  Container,
+  IconButton,
+  makeStyles,
+  Typography,
+} from "@material-ui/core"
 
 import LinkedInIcon from "@material-ui/icons/LinkedIn"
-import GitHubIcon from '@material-ui/icons/GitHub';
-
+import GitHubIcon from "@material-ui/icons/GitHub"
 
 import ResumeIcon from "@material-ui/icons/Description"
 import ExperienceTimeline from "../components/index/experienceTimeline"
@@ -44,12 +53,12 @@ const IndexPage = ({ data }) => {
           <Button variant="outlined">Projects</Button>
           <Button variant="outlined">Resume</Button>
 
-        <IconButton>
-          <GitHubIcon fontSize="large"/>
-        </IconButton>
-        <IconButton>
-          <LinkedInIcon fontSize="large"/>
-        </IconButton>
+          <IconButton>
+            <GitHubIcon fontSize="large" />
+          </IconButton>
+          <IconButton>
+            <LinkedInIcon fontSize="large" />
+          </IconButton>
           {/* href="https://github.com/zhengkyl"
                 href="https://devpost.com/zhengkyl"
 
@@ -119,12 +128,8 @@ const IndexPage = ({ data }) => {
           subtext="-me, 2020"
           id="hire"
         />
-
-        <div>
-          <Typography variant="body1">
-            I'm currently looking for internships for Summer 2021.
-          </Typography>
-        </div>
+        <ProfileCard imgSrc={data.profile.childImageSharp.fluid}/>
+        
       </Layout>
     </>
   )
@@ -140,6 +145,13 @@ export const pageQuery = graphql`
       }
     }
     mobile_games: file(relativePath: { eq: "mobile_games.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 300) {
+          ...GatsbyImageSharpFluid_noBase64
+        }
+      }
+    }
+    profile: file(relativePath: { eq: "profile.jpg" }) {
       childImageSharp {
         fluid(maxWidth: 300) {
           ...GatsbyImageSharpFluid_noBase64

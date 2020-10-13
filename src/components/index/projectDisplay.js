@@ -7,8 +7,10 @@ import BubbleSvg from "../../assets/svgs/bubbles.svg"
 
 const useStyles = makeStyles(theme => ({
   projectsRow: {
-    display: "flex",
-    flexWrap: "wrap",
+    [theme.breakpoints.up("sm")]:{
+      flexWrap: "wrap",
+      display: "flex",
+    }
   },
   bubbles:{
     position:"absolute",
@@ -28,8 +30,6 @@ const ProjectDisplay = ({imageSources}) => {
           title="kgg.gg"
           style={{
             flex: 3,
-            minWidth: 300,
-            // backgroundImage: "linear-gradient(-45deg, #DC143C99, #DC143C20)",
             color: "crimson",
           }}
         >
@@ -48,8 +48,6 @@ const ProjectDisplay = ({imageSources}) => {
           title="KGG"
           style={{
             flex: 2,
-            minWidth: 200,
-            // backgroundImage: "linear-gradient(-45deg, #AEF78E, #AEF78E20)",
             alignSelf: "flex-end",
           }}
         >
@@ -63,8 +61,6 @@ const ProjectDisplay = ({imageSources}) => {
           title="KGG"
           style={{
             flex: 2,
-            minWidth: 200,
-            // backgroundImage: "linear-gradient(-45deg, #CAFFB9, #CAFFB920)",
           }}
         >
           Here is some text for this thing
@@ -74,8 +70,6 @@ const ProjectDisplay = ({imageSources}) => {
           title="KGG"
           style={{
             flex: 3,
-            minWidth: 300,
-            // backgroundImage: "linear-gradient(-45deg, #66A182, #66A18220)",
           }}
         >
           Here is some text for this thing

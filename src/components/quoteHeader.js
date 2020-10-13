@@ -3,8 +3,8 @@ import { makeStyles, Typography } from "@material-ui/core"
 
 const useStyles = makeStyles((theme)=>({
   container:{
-    marginTop:theme.spacing(8),
-    marginBottom:theme.spacing(4)
+    marginTop:theme.spacing(16),
+    marginBottom:theme.spacing(8)
   }
 }))
 const QuoteHeader = ({ right, title, subtext, id }) => {
