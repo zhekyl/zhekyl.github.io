@@ -53,12 +53,7 @@ const IndexPage = ({ data }) => {
           <Button variant="outlined">Projects</Button>
           <Button variant="outlined">Resume</Button>
 
-          <IconButton>
-            <GitHubIcon fontSize="large" />
-          </IconButton>
-          <IconButton>
-            <LinkedInIcon fontSize="large" />
-          </IconButton>
+          <ProfileCard imgSrc={data.profile.childImageSharp.fluid}/>
           {/* href="https://github.com/zhengkyl"
                 href="https://devpost.com/zhengkyl"
 
