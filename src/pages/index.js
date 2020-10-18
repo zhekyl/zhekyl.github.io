@@ -38,7 +38,18 @@ import ResumeIcon from "@material-ui/icons/Description"
 import ExperienceTimeline from "../components/index/experienceTimeline"
 import QuoteHeader from "../components/quoteHeader"
 
-const useStyles = makeStyles(theme => ({}))
+const useStyles = makeStyles(theme => ({
+  profiles:{
+    display:'flex',
+    justifyContent:'space-evenly',
+    "& > :last-child":{
+      display:'none',
+      [theme.breakpoints.up("md")]:{
+        display:'unset'
+      }
+    }
+  }
+}))
 const IndexPage = ({ data }) => {
   const classes = useStyles()
   return (
@@ -47,13 +58,13 @@ const IndexPage = ({ data }) => {
         <SEO title="test title" />
         <div>
           <Typography variant="h1">Kyle Zheng</Typography>
+          {/* <ProfileCard imgSrc={data.profile3.childImageSharp.fluid}/> */}
 
           <Button variant="outlined">About</Button>
           <Button variant="outlined">Experience</Button>
           <Button variant="outlined">Projects</Button>
           <Button variant="outlined">Resume</Button>
 
-          <ProfileCard imgSrc={data.profile.childImageSharp.fluid}/>
           {/* href="https://github.com/zhengkyl"
                 href="https://devpost.com/zhengkyl"
 
@@ -123,7 +134,10 @@ const IndexPage = ({ data }) => {
           subtext="-me, 2020"
           id="hire"
         />
-        <ProfileCard imgSrc={data.profile.childImageSharp.fluid}/>
+        <div className={classes.profiles}>
+          <ProfileCard imgSrc={data.profile5.childImageSharp.fluid}/>
+          <ProfileCard imgSrc={data.profile4.childImageSharp.fluid}/>
+        </div>
         
       </Layout>
     </>
@@ -146,7 +160,49 @@ export const pageQuery = graphql`
         }
       }
     }
-    profile: file(relativePath: { eq: "profile.jpg" }) {
+    profile_tall: file(relativePath: { eq: "profile_tall.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 300) {
+          ...GatsbyImageSharpFluid_noBase64
+        }
+      }
+    }
+    avatar: file(relativePath: { eq: "avatar.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 300) {
+          ...GatsbyImageSharpFluid_noBase64
+        }
+      }
+    }
+    profile1: file(relativePath: { eq: "profile1.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 300) {
+          ...GatsbyImageSharpFluid_noBase64
+        }
+      }
+    }
+    profile2: file(relativePath: { eq: "profile2.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 300) {
+          ...GatsbyImageSharpFluid_noBase64
+        }
+      }
+    }
+    profile3: file(relativePath: { eq: "profile3.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 300) {
+          ...GatsbyImageSharpFluid_noBase64
+        }
+      }
+    }
+    profile4: file(relativePath: { eq: "profile4.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 300) {
+          ...GatsbyImageSharpFluid_noBase64
+        }
+      }
+    }
+    profile5: file(relativePath: { eq: "profile5.png" }) {
       childImageSharp {
         fluid(maxWidth: 300) {
           ...GatsbyImageSharpFluid_noBase64

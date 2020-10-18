@@ -6,10 +6,12 @@ import {
   Card,
   CardActions,
   CardContent,
+  CardMedia,
   Container,
   IconButton,
   makeStyles,
   Typography,
+  Paper,
 } from "@material-ui/core"
 
 import LinkedInIcon from "@material-ui/icons/LinkedIn"
@@ -18,57 +20,35 @@ import GitHubIcon from "@material-ui/icons/GitHub"
 import ResumeIcon from "@material-ui/icons/Description"
 
 const useStyles = makeStyles(theme => ({
-  container: {
-    // [theme.breakpoints.up("sm")]:{
-    //   display:"flex",
-    // }
-    maxWidth:400,
-  },
-  image: {
-    borderRadius: theme.spacing(1.5),
-    // maxWidth: 300,
-    // margin: "auto",
-    marginLeft:theme.spacing(2),
-    marginRight:theme.spacing(2),
-    marginBottom: "-30%",
-    position: "relative",
-    // [theme.breakpoints.up("sm")]:{
-    //   flex:1,
-    //   marginBottom:0,
-    // }
-  },
   card: {
-    // maxWidth: 332,
+    maxWidth: 300,
+    position:"relative",
     borderRadius: theme.spacing(1.5),
-    paddingTop: "30%",
-    margin: "auto",
-    // [theme.breakpoints.up("sm")]:{
-    //   flex:2,
-    //   paddingTop:"unset",
-    // }
+    // margin: "auto",
   },
   actions: {
     justifyContent: "space-between",
+    position:"absolute",
+    bottom:0,
+    width:"100%",
+    zIndex:10,
   },
 }))
 
 const ProfileCard = ({ imgSrc }) => {
   const classes = useStyles()
   return (
-    <Container maxWidth="sm" className={classes.container}>
-      <Card className={classes.image} elevation={2}>
-        <Img fluid={imgSrc} />
-      </Card>
-      <Card className={classes.card} >
+      <Card className={classes.card}>
         <CardContent>
-          <Typography variant="h5">Hey there, traveler!</Typography>
+          <Typography variant="h4">Hey there!</Typography>
           <Typography variant="body1">
             I'm currently looking for a Summer 2021 internship, but hit me up
             regardless!
           </Typography>
         </CardContent>
+        
         <CardActions className={classes.actions}>
-          <Button endIcon={<ResumeIcon />} variant="outlined" size="large">
+          <Button endIcon={<ResumeIcon />} variant="outlined" >
             Resume
           </Button>
           <div>
@@ -80,8 +60,10 @@ const ProfileCard = ({ imgSrc }) => {
             </IconButton>
           </div>
         </CardActions>
+        <CardMedia>
+          <Img fluid={imgSrc} />
+        </CardMedia>
       </Card>
-    </Container>
   )
 }
 export default ProfileCard
