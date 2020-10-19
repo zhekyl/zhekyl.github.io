@@ -1,26 +1,14 @@
 import React from "react"
 import { graphql } from "gatsby"
-import Img from "gatsby-image"
-// import Fade from "react-reveal/Fade"
-import ReactRotatingText from "react-rotating-text"
 
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-// import { faChevronDown, faFile } from "@fortawesome/free-solid-svg-icons"
-// import { faGithub, faLinkedin, faDev } from "@fortawesome/free-brands-svg-icons"
-
-import indexStyles from "./index.module.css"
 import SEO from "../components/seo"
-import Layout from "../components/layout"
+
+import QuoteHeader from "../components/quoteHeader"
 import ProjectCarousel from "../components/index/projectCarousel"
 import ProjectDisplay from "../components/index/projectDisplay"
+import ExperienceTimeline from "../components/index/experienceTimeline"
 import ProfileCard from "../components/profileCard"
 
-// import gamesImg from "../assets/images/games.png"
-// import webImg from "../assets/images/combined_view.png"
-import buildingsImg from "../assets/images/buildings.png"
-import forkuImg from "../assets/images/forku.png"
-import grapevineImg from "../assets/images/grapevine.png"
-import hackerheroImg from "../assets/images/hackerhero.png"
 import {
   Button,
   Card,
@@ -30,13 +18,6 @@ import {
   makeStyles,
   Typography,
 } from "@material-ui/core"
-
-import LinkedInIcon from "@material-ui/icons/LinkedIn"
-import GitHubIcon from "@material-ui/icons/GitHub"
-
-import ResumeIcon from "@material-ui/icons/Description"
-import ExperienceTimeline from "../components/index/experienceTimeline"
-import QuoteHeader from "../components/quoteHeader"
 
 const useStyles = makeStyles(theme => ({
   profiles:{
@@ -48,23 +29,29 @@ const useStyles = makeStyles(theme => ({
         display:'unset'
       }
     }
+  },
+  navButton:{
+    // backgroundColor:theme.palette.primary.light,
+    // boxShadow:'',
+  },
+  highlight:{
+    color:theme.palette.primary.main
   }
 }))
 const IndexPage = ({ data }) => {
   const classes = useStyles()
   return (
     <>
-      <Layout>
         <SEO title="test title" />
         <div>
           <Typography variant="h1">Kyle Zheng</Typography>
           {/* <ProfileCard imgSrc={data.profile3.childImageSharp.fluid}/> */}
 
-          <Button variant="outlined">About</Button>
-          <Button variant="outlined">Experience</Button>
-          <Button variant="outlined">Projects</Button>
-          <Button variant="outlined">Resume</Button>
-
+          <Button size="large" color="primary" variant="outlined" className={classes.navButton}>About</Button>
+          <Button size="large" color="primary" variant="outlined" className={classes.navButton}>Experience</Button>
+          <Button size="large" color="primary" variant="outlined" className={classes.navButton}>Projects</Button>
+          <Button size="large" color="primary" variant="outlined" className={classes.navButton}>Resume</Button>
+          
           {/* href="https://github.com/zhengkyl"
                 href="https://devpost.com/zhengkyl"
 
@@ -73,14 +60,14 @@ const IndexPage = ({ data }) => {
 
         <QuoteHeader
           title="Not like the other boys"
-          subtext="-me, 2020"
+          subtext="Kyle Zheng, 2020"
           id="about"
         />
 
         <Typography variant="body1">
           I am a heterosexual asian male studying{" "}
-          <span className={indexStyles.highlight}>computer science</span> and{" "}
-          <span className={indexStyles.highlight}>math</span> at Purdue
+          <span className={classes.highlight}>computer science</span> and{" "}
+          <span className={classes.highlight}>math</span> at Purdue
           University.
         </Typography>
 
@@ -93,14 +80,14 @@ const IndexPage = ({ data }) => {
         <QuoteHeader
           right
           title="Loves paying income taxes"
-          subtext="-me, 2020"
+          subtext="Kyle Zheng, 2020"
           id="experience"
         />
         <ExperienceTimeline />
 
         <QuoteHeader
           title="Unbelievably amazing projects"
-          subtext="-me, 2020"
+          subtext="Kyle Zheng, 2020"
           id="projects"
         />
         <ProjectDisplay imageSources={data} />
@@ -108,7 +95,7 @@ const IndexPage = ({ data }) => {
         <QuoteHeader
           right
           title="Believably amazing projects"
-          subtext="-me, 2020"
+          subtext="Kyle Zheng, 2020"
           id="projects2"
         />
         <ProjectCarousel imageSources={data} />
@@ -131,7 +118,7 @@ const IndexPage = ({ data }) => {
 
         <QuoteHeader
           title="If I could, I'd hire him twice!"
-          subtext="-me, 2020"
+          subtext="Kyle Zheng, 2020"
           id="hire"
         />
         <div className={classes.profiles}>
@@ -139,7 +126,6 @@ const IndexPage = ({ data }) => {
           <ProfileCard imgSrc={data.profile4.childImageSharp.fluid}/>
         </div>
         
-      </Layout>
     </>
   )
 }

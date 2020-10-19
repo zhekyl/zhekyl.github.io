@@ -1,5 +1,4 @@
 import { createMuiTheme, responsiveFontSizes } from '@material-ui/core/styles';
-
 const theme = responsiveFontSizes(createMuiTheme({
   typography: {
     fontFamily: "Avenir Next, Helvetica Neue, Segoe UI, Helvetica, Arial, sans-serif",
@@ -20,9 +19,16 @@ const theme = responsiveFontSizes(createMuiTheme({
     },
     h6:{
       fontWeight:600,
+    },
+    button:{
+      fontWeight:600,
     }
   },
-  
+  palette:{
+    primary:{
+      main:'#ef5350'
+    }
+  }
 }));
 
 export default theme
