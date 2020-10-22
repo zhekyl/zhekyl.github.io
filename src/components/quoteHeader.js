@@ -1,6 +1,9 @@
 import React from "react"
-import { Avatar, Chip, makeStyles, Typography } from "@material-ui/core"
-import avatarSrc from "../assets/images/avatar.jpg"
+import {
+  makeStyles,
+  Typography,
+} from "@material-ui/core"
+
 const useStyles = makeStyles(theme => ({
   container: {
     marginTop: theme.spacing(16),
@@ -13,7 +16,6 @@ const useStyles = makeStyles(theme => ({
     verticalAlign: "middle",
   },
   subtitle: {
-    // display:'flex',
     verticalAlign: "middle",
   },
 }))
@@ -26,13 +28,7 @@ const QuoteHeader = ({ right, title, subtext, id }) => {
       className={classes.container}
     >
       <Typography variant="h2">{title}</Typography>
-      –
-      <Chip
-        variant="outlined"
-        avatar={<Avatar src={avatarSrc} />}
-        label={subtext}
-        size="small"
-      />
+      <Typography variant="h5" component="span">{subtext}</Typography>
     </div>
   )
 }

@@ -4,9 +4,10 @@ import { graphql } from "gatsby"
 import SEO from "../components/seo"
 
 import QuoteHeader from "../components/quoteHeader"
-import ProjectCarousel from "../components/index/projectCarousel"
-import ProjectDisplay from "../components/index/projectDisplay"
+import AboutArea from "../components/index/aboutArea"
 import ExperienceTimeline from "../components/index/experienceTimeline"
+import ProjectDisplay from "../components/index/projectDisplay"
+import ProjectCarousel from "../components/index/projectCarousel"
 import ProfileCard from "../components/profileCard"
 
 import {
@@ -20,87 +21,103 @@ import {
 } from "@material-ui/core"
 
 const useStyles = makeStyles(theme => ({
-  profiles:{
-    display:'flex',
-    justifyContent:'space-evenly',
-    "& > :last-child":{
-      display:'none',
-      [theme.breakpoints.up("md")]:{
-        display:'unset'
-      }
-    }
+  profiles: {
+    display: "flex",
+    justifyContent: "space-evenly",
+    "& > :last-child": {
+      display: "none",
+      [theme.breakpoints.up("md")]: {
+        display: "unset",
+      },
+    },
   },
-  navButton:{
+  navButton: {
     // backgroundColor:theme.palette.primary.light,
     // boxShadow:'',
   },
-  highlight:{
-    color:theme.palette.primary.main
-  }
+  highlight: {
+    color: theme.palette.primary.main,
+  },
 }))
 const IndexPage = ({ data }) => {
   const classes = useStyles()
   return (
     <>
-        <SEO title="test title" />
-        <div>
-          <Typography variant="h1">Kyle Zheng</Typography>
-          {/* <ProfileCard imgSrc={data.profile3.childImageSharp.fluid}/> */}
+      <SEO title="test title" />
+      <div>
+        <Typography variant="h1">Kyle Zheng</Typography>
+        {/* <ProfileCard imgSrc={data.profile3.childImageSharp.fluid}/> */}
 
-          <Button size="large" color="primary" variant="outlined" className={classes.navButton}>About</Button>
-          <Button size="large" color="primary" variant="outlined" className={classes.navButton}>Experience</Button>
-          <Button size="large" color="primary" variant="outlined" className={classes.navButton}>Projects</Button>
-          <Button size="large" color="primary" variant="outlined" className={classes.navButton}>Resume</Button>
-          
-          {/* href="https://github.com/zhengkyl"
+        <Button
+          size="large"
+          color="primary"
+          variant="outlined"
+          className={classes.navButton}
+        >
+          About
+        </Button>
+        <Button
+          size="large"
+          color="primary"
+          variant="outlined"
+          className={classes.navButton}
+        >
+          Experience
+        </Button>
+        <Button
+          size="large"
+          color="primary"
+          variant="outlined"
+          className={classes.navButton}
+        >
+          Projects
+        </Button>
+        <Button
+          size="large"
+          color="primary"
+          variant="outlined"
+          className={classes.navButton}
+        >
+          Resume
+        </Button>
+
+        {/* href="https://github.com/zhengkyl"
                 href="https://devpost.com/zhengkyl"
 
                 href="https://www.linkedin.com/in/kyle-zheng-9b2546145/" */}
-        </div>
+      </div>
 
-        <QuoteHeader
-          title="Not like the other boys"
-          subtext="Kyle Zheng, 2020"
-          id="about"
-        />
+      <QuoteHeader
+        title="Not like the other boys"
+        subtext="😤🔨😤😈"
+        id="about"
+      />
+      <AboutArea imageSources={data}/>
 
-        <Typography variant="body1">
-          I am a heterosexual asian male studying{" "}
-          <span className={classes.highlight}>computer science</span> and{" "}
-          <span className={classes.highlight}>math</span> at Purdue
-          University.
-        </Typography>
+      <QuoteHeader
+        right
+        title="Loves paying income taxes"
+        subtext="🔥💰🍞💰🤑"
+        id="experience"
+      />
+      <ExperienceTimeline />
 
-        <Typography variant="body1">
-          When I'm not subverting societal expectations and defying gender
-          norms, I'm mostly working on dumb projects or thinking about dumber
-          projects to start.
-        </Typography>
+      <QuoteHeader
+        title="Unbelievably amazing projects"
+        subtext="🤯🏆🥇😱"
+        id="projects"
+      />
+      <ProjectDisplay imageSources={data} />
 
-        <QuoteHeader
-          right
-          title="Loves paying income taxes"
-          subtext="Kyle Zheng, 2020"
-          id="experience"
-        />
-        <ExperienceTimeline />
+      <QuoteHeader
+        right
+        title="Believably amazing projects"
+        subtext="🤡😌"
+        id="projects2"
+      />
+      <ProjectCarousel imageSources={data} />
 
-        <QuoteHeader
-          title="Unbelievably amazing projects"
-          subtext="Kyle Zheng, 2020"
-          id="projects"
-        />
-        <ProjectDisplay imageSources={data} />
-
-        <QuoteHeader
-          right
-          title="Believably amazing projects"
-          subtext="Kyle Zheng, 2020"
-          id="projects2"
-        />
-        <ProjectCarousel imageSources={data} />
-
-        {/* <div>
+      {/* <div>
             <h4>A Variety of Hypercasual Mobile Games</h4>
             <div>
               <a
@@ -116,30 +133,50 @@ const IndexPage = ({ data }) => {
             </div>
           </div> */}
 
-        <QuoteHeader
-          title="If I could, I'd hire him twice!"
-          subtext="Kyle Zheng, 2020"
-          id="hire"
-        />
-        <div className={classes.profiles}>
-          <ProfileCard imgSrc={data.profile5.childImageSharp.fluid}/>
-          <ProfileCard imgSrc={data.profile4.childImageSharp.fluid}/>
-        </div>
-        
+      <QuoteHeader
+        title="If I could, I'd hire him twice!"
+        subtext="🙏🙏😔"
+        id="hire"
+      />
+      <div className={classes.profiles}>
+        <ProfileCard imgSrc={data.profile5.childImageSharp.fluid} />
+        <ProfileCard imgSrc={data.profile4.childImageSharp.fluid} />
+      </div>
     </>
   )
 }
 
 export const pageQuery = graphql`
   query {
-    kgg_website: file(relativePath: { eq: "kgg_website.png" }) {
+    kyle_wires: file(relativePath: { eq: "kyle_wires.jpg" }) {
       childImageSharp {
         fluid(maxWidth: 300) {
           ...GatsbyImageSharpFluid_noBase64
         }
       }
     }
-    mobile_games: file(relativePath: { eq: "mobile_games.png" }) {
+    kyle_focus: file(relativePath: { eq: "kyle_focus.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 300) {
+          ...GatsbyImageSharpFluid_noBase64
+        }
+      }
+    }
+    kyle_cardboard: file(relativePath: { eq: "kyle_cardboard.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 300) {
+          ...GatsbyImageSharpFluid_noBase64
+        }
+      }
+    }
+    kgg_website: file(relativePath: { eq: "projects/kgg_website.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 300) {
+          ...GatsbyImageSharpFluid_noBase64
+        }
+      }
+    }
+    mobile_games: file(relativePath: { eq: "projects/mobile_games.png" }) {
       childImageSharp {
         fluid(maxWidth: 300) {
           ...GatsbyImageSharpFluid_noBase64
