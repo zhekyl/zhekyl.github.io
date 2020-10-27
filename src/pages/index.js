@@ -150,7 +150,14 @@ export const pageQuery = graphql`
   query {
     kyle_wires: file(relativePath: { eq: "kyle_wires.jpg" }) {
       childImageSharp {
-        fluid(maxWidth: 300) {
+        fluid(maxWidth: 600) {
+          ...GatsbyImageSharpFluid_noBase64
+        }
+      }
+    }
+    kyle_flowers: file(relativePath: { eq: "kyle_flowers.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 600) {
           ...GatsbyImageSharpFluid_noBase64
         }
       }
@@ -164,7 +171,7 @@ export const pageQuery = graphql`
     }
     kyle_cardboard: file(relativePath: { eq: "kyle_cardboard.jpg" }) {
       childImageSharp {
-        fluid(maxWidth: 300) {
+        fluid(maxWidth: 600) {
           ...GatsbyImageSharpFluid_noBase64
         }
       }
