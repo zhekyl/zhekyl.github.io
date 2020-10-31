@@ -48,39 +48,6 @@ const IndexPage = ({ data }) => {
         <Typography variant="h1">Kyle Zheng</Typography>
         {/* <ProfileCard imgSrc={data.profile3.childImageSharp.fluid}/> */}
 
-        <Button
-          size="large"
-          color="primary"
-          variant="outlined"
-          className={classes.navButton}
-        >
-          About
-        </Button>
-        <Button
-          size="large"
-          color="primary"
-          variant="outlined"
-          className={classes.navButton}
-        >
-          Experience
-        </Button>
-        <Button
-          size="large"
-          color="primary"
-          variant="outlined"
-          className={classes.navButton}
-        >
-          Projects
-        </Button>
-        <Button
-          size="large"
-          color="primary"
-          variant="outlined"
-          className={classes.navButton}
-        >
-          Resume
-        </Button>
-
         {/* href="https://github.com/zhengkyl"
                 href="https://devpost.com/zhengkyl"
 

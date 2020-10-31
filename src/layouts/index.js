@@ -6,6 +6,7 @@ import Particles from "react-particles-js"
 import particleParams from "../assets/json/particleParams.json"
 
 import Footer from "../components/footer"
+import Header from "../components/header"
 
 // Inline Fontawesome Styles to prevent flashing icons during first page load.
 import { config } from "@fortawesome/fontawesome-svg-core"
@@ -32,7 +33,8 @@ const Layout = ({ children }) => {
           width={`100vw`}
           params={particleParams}
         /> */}
-        <Container maxWidth="lg">{children}</Container>
+        <Header/>
+        <Container maxWidth="lg" style={{scrollBehavior:"smooth"}}>{children}</Container>
         {/* <footer className={layoutStyles.footer}>
           {`© ${new Date().getFullYear()}, Built with <3 by Kyle Zheng`}
         </footer> */}

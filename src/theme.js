@@ -29,6 +29,15 @@ const theme = responsiveFontSizes(createMuiTheme({
       main:'#ef5350'
     }
   },
+  overrides:{
+    MuiCssBaseline: {
+      '@global': {
+        html: {
+          scrollBehavior:"smooth",
+        },
+      },
+    },
+  }
 }));
 
 export default theme
