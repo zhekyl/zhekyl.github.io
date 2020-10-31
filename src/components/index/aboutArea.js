@@ -54,7 +54,7 @@ const AboutArea = ({ imageSources }) => {
   return (
     <div className={classes.container}>
       <div className={classes.wordSection}>
-        <Card className={classes.card}>
+        <Card className={classes.card} variant="outlined">
           <CardContent>
             <Typography variant="body1" component="span">
               I am a heterosexual asian male studying{" "}
@@ -72,14 +72,14 @@ const AboutArea = ({ imageSources }) => {
       </div>
 
       <div className={classes.picSection}>
-        <Card className={classes.card} >
+        <Card className={classes.card} variant="outlined">
           <Img  fluid={imageSources.kyle_flowers.childImageSharp.fluid} className={classes.img}/>
         </Card>
         <div className={classes.picCol}>
-          <Card className={classes.card}>
+          <Card className={classes.card} variant="outlined">
             <Img fluid={imageSources.kyle_wires.childImageSharp.fluid} />
           </Card>
-          <Card className={classes.card}>
+          <Card className={classes.card} variant="outlined">
             <img src={kyle_fall} className={classes.img}/>
             {/* <Img fluid={imageSources.kyle_cardboard.childImageSharp.fluid} /> */}
           </Card>

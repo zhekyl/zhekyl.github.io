@@ -36,10 +36,10 @@ const ProjectBlock = ({ title, fluidImgSrc, children, style }) => {
   const classes = useStyles()
   return (
     <div style={style} className={classes.whole}>
-      <Card className={classes.card}>
+      <Card className={classes.card} variant="outlined">
         <Img fluid={fluidImgSrc} className={classes.image} />
       </Card>
-      <Card className={classes.card}>
+      <Card className={classes.card} variant="outlined">
         <CardContent>
           <Typography variant="h3">{title}</Typography>
           <Typography variant="body2">{children}</Typography>

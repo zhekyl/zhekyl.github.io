@@ -38,7 +38,7 @@ const useStyles = makeStyles(theme => ({
 const ProfileCard = ({ imgSrc }) => {
   const classes = useStyles()
   return (
-      <Card className={classes.card}>
+      <Card className={classes.card} variant="outlined">
         <CardContent>
           <Typography variant="h4">Hey there!</Typography>
           <Typography variant="body1">

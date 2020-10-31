@@ -33,7 +33,7 @@ const useStyles = makeStyles(theme => ({
 const ProjectCard = ({ title, fluidImgSrc, children, githubLink }) => {
   const classes = useStyles()
   return (
-    <Card className={classes.card}>
+    <Card className={classes.card} variant="outlined">
       {fluidImgSrc && <Img fluid={fluidImgSrc} className={classes.image} />}
       <div className={classes.content}>
         <CardContent>

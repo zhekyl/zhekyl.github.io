@@ -58,7 +58,7 @@ const TimelineItemWrapper = ({ children, last, opposite }) => (
 const TimelineCard = ({ year, location, position }) => {
   const classes = useStyles()
   return (
-    <Card className={classes.card}>
+    <Card className={classes.card} variant="outlined">
       <CardContent>
         <Typography variant="h4">{location}</Typography>
         <Typography variant="h5">{position}</Typography>

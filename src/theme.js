@@ -28,7 +28,7 @@ const theme = responsiveFontSizes(createMuiTheme({
     primary:{
       main:'#ef5350'
     }
-  }
+  },
 }));
 
 export default theme
