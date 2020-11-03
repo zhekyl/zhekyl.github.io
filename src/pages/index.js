@@ -46,6 +46,7 @@ const IndexPage = ({ data }) => {
       <SEO title="test title" />
       <div>
         <Typography variant="h1">Kyle Zheng</Typography>
+        <Typography variant="h3"></Typography>
         {/* <ProfileCard imgSrc={data.profile3.childImageSharp.fluid}/> */}
 
         {/* href="https://github.com/zhengkyl"
@@ -103,7 +104,7 @@ const IndexPage = ({ data }) => {
       <QuoteHeader
         title="If I could, I'd hire him twice!"
         subtext="🙏🙏😔"
-        id="hire"
+        id="resume"
       />
       <div className={classes.profiles}>
         <ProfileCard imgSrc={data.profile5.childImageSharp.fluid} />

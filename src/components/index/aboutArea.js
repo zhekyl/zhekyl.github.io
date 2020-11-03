@@ -49,8 +49,10 @@ const useStyles = makeStyles(theme => ({
     flex: 2,
     // display:'flex',
     height: "100%",
+    marginRight:0,
     [theme.breakpoints.up("sm")]: {
       marginBottom: "unset",
+      marginRight:theme.spacing(4),
     },
   },
   picSection: {
@@ -59,22 +61,23 @@ const useStyles = makeStyles(theme => ({
     display: "flex",
     "& > div": {
       flex: 1,
-      marginLeft: 0,
+      // marginLeft: 0,
     },
-    "& > div:last-child": {
-      marginLeft: theme.spacing(2),
-    },
-    "& > div:first-child": {
-      [theme.breakpoints.up("sm")]: {
-        marginLeft: theme.spacing(2),
-      },
-    },
+    // "& > div:last-child": {
+    //   marginLeft: theme.spacing(2),
+    // },
+    // "& > div:first-child": {
+    //   [theme.breakpoints.up("sm")]: {
+    //     marginLeft: theme.spacing(2),
+    //   },
+    // },
     marginBottom: theme.spacing(2),
 
   },
   picCol: {
     display: "flex",
     flexDirection: "column",
+    marginLeft:theme.spacing(2),
     "& > div:first-child": {
       marginBottom: theme.spacing(2),
       flex: 1,

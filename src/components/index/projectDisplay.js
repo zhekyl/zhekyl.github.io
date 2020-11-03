@@ -7,9 +7,15 @@ import BubbleSvg from "../../assets/svgs/bubbles.svg"
 
 const useStyles = makeStyles(theme => ({
   projectsRow: {
+    "& > div": {
+      marginBottom:theme.spacing(4),
+    },
     [theme.breakpoints.up("sm")]:{
-      flexWrap: "wrap",
+      // flexWrap: "wrap",
       display: "flex",
+      "& > div:first-child": {
+        marginRight:theme.spacing(4),
+      },
     }
   },
   bubbles:{

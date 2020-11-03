@@ -13,38 +13,42 @@ import logoSrc from "../assets/images/logo.png"
 const useStyles = makeStyles(theme => ({
   container: {
     // height: theme.spacing(6),
-    visibility: "hidden",
-    [theme.breakpoints.up("sm")]: {
-      visibility: "unset",
+    // visibility: "hidden",
+    // [theme.breakpoints.up("sm")]: {
+      // visibility: "unset",
       display: "flex",
       justifyContent: "space-between",
       alignItems: "center",
       marginTop: theme.spacing(2),
       marginBottom: theme.spacing(2),
-    },
+    // },
   },
   navlink: {
-    padding: theme.spacing(1),
-    marginLeft: theme.spacing(2),
-    // marginRight: theme.spacing(1),
+    paddingBottom:theme.spacing(1),
+    marginLeft: theme.spacing(3),
     textDecoration: "none",
     color: "unset",
-    transition: "color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms",
+    transition: "color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms",
+    borderBottom: `3px solid ${theme.palette.text.primary}`,
     "&:hover": {
-      color: theme.palette.text.disabled,
+      color: theme.palette.primary.main,
+      borderColor:theme.palette.primary.main,
     },
-  },
-  navText: {
-    borderBottom: "3px solid black",
-    paddingTop: theme.spacing(1),
-    paddingBottom: theme.spacing(1),
   },
   logo: {
     width: theme.spacing(6),
     height: theme.spacing(6),
+    boxShadow:`${theme.spacing(0.5)}px ${theme.spacing(0.5)}px ${theme.palette.text.primary}`,
+    transition: "box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms",
+    "&:hover":{
+      boxShadow:`${theme.spacing(0.5)}px ${theme.spacing(0.5)}px ${theme.palette.primary.main}`,
+    }
   },
   navlinks:{
-
+    display:"none",
+    [theme.breakpoints.up("sm")]:{
+      display:"unset",
+    }
   }
 }))
 
@@ -52,7 +56,7 @@ const Navlink = ({ href, children }) => {
   const classes = useStyles()
   return (
     <a href={href} className={classes.navlink}>
-      <Typography variant="h6" component={"span"} className={classes.navText}>
+      <Typography variant="h6" component={"span"}>
         {children}
       </Typography>
     </a>
@@ -64,7 +68,9 @@ const Header = () => {
 
   return (
     <Container maxWidth="lg" className={classes.container}>
-      <img src={logoSrc} className={classes.logo} />
+      <a href="/">
+        <img src={logoSrc} className={classes.logo} />
+      </a>
       <div className={classes.navlinks}>
         <Navlink href="#about">About</Navlink>
         <Navlink href="#experience">Experience</Navlink>

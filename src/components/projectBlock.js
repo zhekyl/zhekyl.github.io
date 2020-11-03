@@ -16,17 +16,16 @@ import WebIcon from "@material-ui/icons/WebAsset"
 const useStyles = makeStyles(theme => ({
   whole:{
     // margin:theme.spacing(2),
-    margin:theme.spacing(2),
-    marginTop: theme.spacing(1),
+    "& > div:last-child":{
+      marginTop: theme.spacing(1),
+    }
   },
   image: {
     // flex: 1,
   },
   card:{
     borderRadius: theme.spacing(1.5),
-    marginTop: theme.spacing(1),
   },
-
   linksArea: {
     flexDirection: "row-reverse",
   },
