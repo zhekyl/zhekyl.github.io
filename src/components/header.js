@@ -25,8 +25,8 @@ const useStyles = makeStyles(theme => ({
   },
   navlink: {
     padding: theme.spacing(1),
-    marginLeft: theme.spacing(1),
-    marginRight: theme.spacing(1),
+    marginLeft: theme.spacing(2),
+    // marginRight: theme.spacing(1),
     textDecoration: "none",
     color: "unset",
     transition: "color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms",

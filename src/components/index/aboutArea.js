@@ -10,37 +10,52 @@ import {
   Typography,
 } from "@material-ui/core"
 
+import SchoolIcon from "@material-ui/icons/School"
+import LocalFloristIcon from "@material-ui/icons/LocalFlorist"
+import LocalAtmIcon from "@material-ui/icons/LocalAtm"
+
+import PublicIcon from "@material-ui/icons/Public"
+import PaletteIcon from "@material-ui/icons/Palette"
+import CasinoIcon from "@material-ui/icons/Casino"
+
+import SportsEsportsIcon from "@material-ui/icons/SportsEsports"
+import WhatshotIcon from "@material-ui/icons/Whatshot"
+import RedeemIcon from "@material-ui/icons/Redeem"
+import PollIcon from "@material-ui/icons/Poll"
+import LocalHotelIcon from "@material-ui/icons/LocalHotel"
+import LocalLaundryServiceIcon from "@material-ui/icons/LocalLaundryService"
+
 import kyle_fall from "../../assets/images/kyle_fall.gif"
+import RadarSvg from "../../assets/svgs/radar.svg"
 const useStyles = makeStyles(theme => ({
   card: {
     borderRadius: theme.spacing(1.5),
   },
   container: {
     display: "flex",
-    flexDirection: "column",
+    flexDirection: "column-reverse",
     justifyContent: "center",
     alignItems: "center",
     [theme.breakpoints.up("sm")]: {
       flexDirection: "unset",
     },
-    "& > div": {
-      [theme.breakpoints.up("sm")]: {
-        maxWidth:500,
-      },
-    }
+    // "& > div": {
+    //   [theme.breakpoints.up("sm")]: {
+    //     maxWidth:500,
+    //   },
+    // }
   },
   wordSection: {
-    flex: 1,
+    flex: 2,
     // display:'flex',
     height: "100%",
-    marginBottom: theme.spacing(2),
     [theme.breakpoints.up("sm")]: {
       marginBottom: "unset",
     },
   },
   picSection: {
-    width:'100%',
-    flex: 1,
+    width: "100%",
+    flex: 3,
     display: "flex",
     "& > div": {
       flex: 1,
@@ -54,6 +69,8 @@ const useStyles = makeStyles(theme => ({
         marginLeft: theme.spacing(2),
       },
     },
+    marginBottom: theme.spacing(2),
+
   },
   picCol: {
     display: "flex",
@@ -67,6 +84,16 @@ const useStyles = makeStyles(theme => ({
     height: "100%",
     width: "100%",
   },
+  traits: {
+    display: "flex",
+    textAlign:"center",
+    justifyContent:"space-evenly",
+  },
+  radar:{
+    maxWidth:360,
+    margin:"auto",
+    display:"block"
+  }
 }))
 
 const AboutArea = ({ imageSources }) => {
@@ -76,18 +103,21 @@ const AboutArea = ({ imageSources }) => {
       <div className={classes.wordSection}>
         <Card className={classes.card} variant="outlined">
           <CardContent>
-            <Typography variant="h4">
-              Hello there
-            </Typography>
+            <Typography variant="h4">Hello there</Typography>
             <Typography variant="body1" component="span">
               I'm a student studying{" "}
               <span className={classes.highlight}>computer science</span> and{" "}
               <span className={classes.highlight}>math</span> at Purdue
               University.
-              <br />
-              <br />
-              My hobbies include exchanging goods and/or services for currency.
             </Typography>
+
+            <Typography variant="h6">I like working on cool projects</Typography>
+
+            <Typography variant="body1" component="span">
+              At hackathons or in my room, with strangers or best friends, bringing ideas into reality is my passion.
+            </Typography>
+
+            <RadarSvg className={classes.radar}/>
           </CardContent>
         </Card>
       </div>
