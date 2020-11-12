@@ -1,5 +1,6 @@
 import React from "react"
 import Img from "gatsby-image"
+import clsx from "clsx"
 import {
   Button,
   Card,
@@ -21,7 +22,7 @@ const useStyles = makeStyles(theme => ({
     }
   },
   image: {
-    // flex: 1,
+    padding:theme.spacing(3)
   },
   card:{
     borderRadius: theme.spacing(1.5),
@@ -31,12 +32,12 @@ const useStyles = makeStyles(theme => ({
   },
 }))
 
-const ProjectBlock = ({ title, fluidImgSrc, children, style }) => {
+const ProjectBlock = ({ title, fluidImgSrc, children, style, githubLink, linkTitle, link }) => {
   const classes = useStyles()
   return (
     <div style={style} className={classes.whole}>
-      <Card className={classes.card} variant="outlined">
-        <Img fluid={fluidImgSrc} className={classes.image} />
+      <Card className={clsx(classes.card,classes.image)} variant="outlined">
+        <Img fluid={fluidImgSrc} />
       </Card>
       <Card className={classes.card} variant="outlined">
         <CardContent>
@@ -44,11 +45,11 @@ const ProjectBlock = ({ title, fluidImgSrc, children, style }) => {
           <Typography variant="body2">{children}</Typography>
         </CardContent>
         <CardActions className={classes.linksArea}>
-          <IconButton>
+          <IconButton href={githubLink} target="_blank" rel="noopener">
             <GitHubIcon />
           </IconButton>
-          <Button size="small" variant="outlined" startIcon={<WebIcon />}>
-            kgg.gg
+          <Button size="small" variant="outlined" target="_blank" href={link} rel="noopener" startIcon={<WebIcon />}>
+            {linkTitle}
           </Button>
         </CardActions>
       </Card>

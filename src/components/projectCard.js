@@ -10,7 +10,6 @@ import {
   Typography,
 } from "@material-ui/core"
 import GitHubIcon from "@material-ui/icons/GitHub"
-// import WebIcon from '@material-ui/icons/Web';
 import WebIcon from "@material-ui/icons/WebAsset"
 
 const useStyles = makeStyles(theme => ({
@@ -30,7 +29,7 @@ const useStyles = makeStyles(theme => ({
   },
 }))
 
-const ProjectCard = ({ title, fluidImgSrc, children, githubLink }) => {
+const ProjectCard = ({ title, fluidImgSrc, children, githubLink, link }) => {
   const classes = useStyles()
   return (
     <Card className={classes.card} variant="outlined">
@@ -41,12 +40,12 @@ const ProjectCard = ({ title, fluidImgSrc, children, githubLink }) => {
           <Typography variant="body2">{children}</Typography>
         </CardContent>
         <CardActions className={classes.linksArea}>
-          <IconButton>
+          <IconButton href={githubLink} target="_blank" rel="noopener">
             <GitHubIcon />
           </IconButton>
-          <Button size="small" variant="outlined" startIcon={<WebIcon />}>
-            kgg.gg
-          </Button>
+          {link && <Button size="small" variant="outlined" href={link} target="_blank" rel="noopener" startIcon={<WebIcon />}>
+            website
+          </Button>}
         </CardActions>
       </div>
     </Card>

@@ -26,7 +26,7 @@ import LocalHotelIcon from "@material-ui/icons/LocalHotel"
 import LocalLaundryServiceIcon from "@material-ui/icons/LocalLaundryService"
 
 import kyle_fall from "../../assets/images/kyle_fall.gif"
-import RadarSvg from "../../assets/svgs/radar.svg"
+import RadarSvg from "../../assets/svgs/radar.min.svg"
 const useStyles = makeStyles(theme => ({
   card: {
     borderRadius: theme.spacing(1.5),
@@ -119,9 +119,10 @@ const AboutArea = ({ imageSources }) => {
             <Typography variant="body1" component="span">
               At hackathons or in my room, with strangers or best friends, bringing ideas into reality is my passion.
             </Typography>
-
-            <RadarSvg className={classes.radar}/>
           </CardContent>
+        </Card>
+        <Card variant="outlined">
+            <RadarSvg className={classes.radar}/>
         </Card>
       </div>
 

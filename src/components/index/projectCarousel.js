@@ -74,6 +74,7 @@ const ProjectCarousel = ({ imageSources }) => {
                       : null
                   }
                   githubLink={project.github}
+                  link={project.link}
                 >
                   {project.desc}
                 </ProjectCard>
@@ -85,6 +86,7 @@ const ProjectCarousel = ({ imageSources }) => {
                       : null
                   }
                   githubLink={project2.github}
+                  link={project2.link}
                 >
                   {project2.desc}
                 </ProjectCard>

@@ -43,10 +43,11 @@ const IndexPage = ({ data }) => {
   const classes = useStyles()
   return (
     <>
-      <SEO title="test title" />
+      <SEO title="Home" />
       <div>
-        <Typography variant="h1">Kyle Zheng</Typography>
-        <Typography variant="h3"></Typography>
+        {/* <Typography variant="h1">Who else?</Typography> */}
+        <Typography variant="h1">Guess who.</Typography>
+        <Typography variant="h3">It's me, Kyle Zheng</Typography>
         {/* <ProfileCard imgSrc={data.profile3.childImageSharp.fluid}/> */}
 
         {/* href="https://github.com/zhengkyl"
@@ -84,22 +85,6 @@ const IndexPage = ({ data }) => {
         id="projects2"
       />
       <ProjectCarousel imageSources={data} />
-
-      {/* <div>
-            <h4>A Variety of Hypercasual Mobile Games</h4>
-            <div>
-              <a
-                href="https://play.google.com/store/apps/developer?id=Cartic&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <img
-                  alt="Get it on Google Play"
-                  src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png"
-                />
-              </a>
-            </div>
-          </div> */}
 
       <QuoteHeader
         title="If I could, I'd hire him twice!"
@@ -146,14 +131,28 @@ export const pageQuery = graphql`
     }
     kgg_website: file(relativePath: { eq: "projects/kgg_website.png" }) {
       childImageSharp {
-        fluid(maxWidth: 300) {
+        fluid(maxWidth: 700) {
+          ...GatsbyImageSharpFluid_noBase64
+        }
+      }
+    }
+    farmassist: file(relativePath: { eq: "projects/farmassist.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 700) {
           ...GatsbyImageSharpFluid_noBase64
         }
       }
     }
     mobile_games: file(relativePath: { eq: "projects/mobile_games.png" }) {
       childImageSharp {
-        fluid(maxWidth: 300) {
+        fluid(maxWidth: 700) {
+          ...GatsbyImageSharpFluid_noBase64
+        }
+      }
+    }
+    movielo: file(relativePath: { eq: "projects/movielo.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 700) {
           ...GatsbyImageSharpFluid_noBase64
         }
       }

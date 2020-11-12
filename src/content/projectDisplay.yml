@@ -1,5 +1,31 @@
 - name: kgg_website
   title: kgg.gg
   desc: >
+    A beautiful and responsive homepage for KGG—Purdue University's inclusive gaming community. Built using Gatsby and Material UI.
+  github: https://github.com/zhengkyl/kgg-website
+  linkTitle: KGG.GG
+  link: https://www.kgg.gg/
+
+- name: farmassist
+  title: FarmAssist
+  desc: >
+    Combine harvester data playback and analyzer. Team placed first in John Deere Coding Challenge at AITP Fall Computing Challenge Day.
+  github: https://github.com/richzli/aitp-ccd-2020-jd
+  linkTitle: farmassist
+  link: https://richz.li/aitp-ccd-2020-jd/
+
+- name: mobile_games
+  title: various mobile games
+  desc: >
     some info about this thing
-  github: www.tadsfasdfwraw
+  github: https://github.com/zhengkyl/movielo
+  linkTitle: Play Store
+  link: https://play.google.com/store/search?q=zhengkyl
+
+- name: movielo
+  title: movielo
+  desc: >
+    Web app to rate movies comparatively using ELO rating. Firebase back end (Firestore, Functions) and React front end.
+  github: https://github.com/zhengkyl/movielo
+  linkTitle: movielo.web.app
+  link: https://movie.web.app
