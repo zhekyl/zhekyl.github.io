@@ -44,7 +44,7 @@ const ProjectCard = ({ title, fluidImgSrc, children, githubLink, link }) => {
             <GitHubIcon />
           </IconButton>
           {link && <Button size="small" variant="outlined" href={link} target="_blank" rel="noopener" startIcon={<WebIcon />}>
-            website
+            site
           </Button>}
         </CardActions>
       </div>

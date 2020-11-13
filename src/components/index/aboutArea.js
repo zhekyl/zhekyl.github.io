@@ -121,9 +121,6 @@ const AboutArea = ({ imageSources }) => {
             </Typography>
           </CardContent>
         </Card>
-        <Card variant="outlined">
-            <RadarSvg className={classes.radar}/>
-        </Card>
       </div>
 
       <div className={classes.picSection}>

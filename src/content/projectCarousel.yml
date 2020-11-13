@@ -1,52 +1,57 @@
 top: 
-  - name: justjoshin
-    title: justjoshin
-    desc: >
-      Campaign website for Residential Hall Election
-    github: www.tadsfasdfwraw
-    link: test
   - name: grapevine
     title: grapevine
     desc: >
-      Proximity-based bluetooth messaging app. Anonymous and decentralized.
+      Proximity based Android bluetooth messaging app. Made during MHacks 12.
     github: https://github.com/JHsu01/MHACKS12
-    link: test
+    link: https://mhacks-1570895498660.firebaseapp.com/
+  - name: justjoshin
+    title: justjoshin
+    desc: >
+      Campaign website for friend's club election.
+    github: https://github.com/zhengkyl/justjoshin
+    link: /justjoshin
+
   - name: forku
     title: forkU
     desc: >
-      Proof of concept for a silverware sharing service
+      Silverware sharing service. Made for BoilerMake VII.
     github: https://github.com/ji-chartsiri/ForkU
-    link: test
+    link: https://forku-dc443.firebaseapp.com/forku.html
+
   - name: synonym_suggester
     title: synonym suggester
     desc: >
       A Google Docs Plugin to suggest alternatives for frequently used words
     github: https://github.com/zhengkyl/synonym-suggester
-    link: test
+    link:
 bottom:
-  - name: hacker_hero
-    title: hacker hero
-    desc: >
-      Rhythm game using youtube videos and randomly generated beatmaps.
-    github: https://github.com/zhengkyl/hacker-hero
-    link: test
   - name: personal_website
-    title: my personal website
+    title: kylezheng.dev
     desc: >
       The website you are currently on. Crazy.
     github: https://github.com/zhengkyl/zhengkyl.github.io
-    link: https://www.kylezheng.dev
-  - name: moviegraph
-    title: moviegraph
+    link: /
+
+  - name: purdue_buildings
+    title: purdue buildings
     desc: >
-      Visualizing movies as connected graphs
-    github: https://github.com/zhengkyl/moviegraph
-    link: test
+      Indoor navigation using Purdue floorplans. 🏆1st at Purdue Hello World '19.
+    github: https://github.com/ji-chartsiri/Purdue-Buildings
+    link: https://purdue-buildings.firebaseapp.com/
+
+  - name: hacker_hero
+    title: hacker hero
+    desc: >
+      Rhythm game using youtube videos and randomly generated beatmaps. VandyHacks VI.
+    github: https://github.com/zhengkyl/hacker-hero
+    link: 
+
   - name: kgg-web
     title: kgg website concept
     desc: >
-      An unused version of kgg.gg using Next.js and stuff.
+      An unused version of kgg.gg using Next.js and 
     github: https://github.com/zhengkyl/kgg-mockup
-    link: test
+    link: https://kgg-web.netlify.app/
 
 

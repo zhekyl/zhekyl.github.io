@@ -46,8 +46,8 @@ const IndexPage = ({ data }) => {
       <SEO title="Home" />
       <div>
         {/* <Typography variant="h1">Who else?</Typography> */}
-        <Typography variant="h1">Guess who.</Typography>
-        <Typography variant="h3">It's me, Kyle Zheng</Typography>
+        <Typography variant="h1">Hello there.</Typography>
+        <Typography variant="h3">It's me, Kyle Zheng.</Typography>
         {/* <ProfileCard imgSrc={data.profile3.childImageSharp.fluid}/> */}
 
         {/* href="https://github.com/zhengkyl"

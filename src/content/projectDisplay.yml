@@ -15,9 +15,9 @@
   link: https://richz.li/aitp-ccd-2020-jd/
 
 - name: mobile_games
-  title: various mobile games
+  title: Mobile Games
   desc: >
-    some info about this thing
+    I created a variety of hypercasual mobile games using C# in the Unity Game Engine.
   github: https://github.com/zhengkyl/movielo
   linkTitle: Play Store
   link: https://play.google.com/store/search?q=zhengkyl
@@ -25,7 +25,7 @@
 - name: movielo
   title: movielo
   desc: >
-    Web app to rate movies comparatively using ELO rating. Firebase back end (Firestore, Functions) and React front end.
+    Web app to rate movies comparatively using ELO rating. React front end and a Firebase back end (Firestore, Functions) to store movies and update rankings.
   github: https://github.com/zhengkyl/movielo
   linkTitle: movielo.web.app
   link: https://movie.web.app

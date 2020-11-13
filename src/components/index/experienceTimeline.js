@@ -55,7 +55,7 @@ const TimelineItemWrapper = ({ children, last, opposite }) => (
   </TimelineItem>
 )
 
-const TimelineCard = ({ year, location, position }) => {
+const TimelineCard = ({ year, location, position, time, desc, link }) => {
   const classes = useStyles()
   return (
     <Card className={classes.card} variant="outlined">
@@ -63,16 +63,15 @@ const TimelineCard = ({ year, location, position }) => {
         <Typography variant="h4">{location}</Typography>
         <Typography variant="h5">{position}</Typography>
         <Typography variant="body1">
-          hello there this is the boyd of the doaijfa and this is waht i did
-          there for your info
+          {desc}
         </Typography>
       </CardContent>
       <CardActions className={classes.cardBottomRow}>
-        <Button>
+        <Button href={link} target="_blank" rel="noopener">
           learn more
         </Button>
         <Typography variant="subtitle1">
-          May 2020 - Current
+          {time}
         </Typography>
       </CardActions>
     </Card>
@@ -92,6 +91,9 @@ const ExperienceTimeline = () => {
             year="2019"
             location="Windsor Dining Court"
             position="Student Associate"
+            time="Sept 2019 - Nov 2019"
+            desc="I cleaned, cooked, and served food in a dining court. Learned to deal with hungry people and hot things."
+            link="https://dining.purdue.edu/ResidentialDining/locations/windsor.html"
           />
         </TimelineItemWrapper>
         <TimelineItemWrapper>
@@ -99,6 +101,9 @@ const ExperienceTimeline = () => {
             year="2020"
             location="Cognition and Learning Lab"
             position="Web Programmer"
+            time="May 2020 - Present"
+            desc="I work with psychology researchers to create browser experiments using jsPsych while also maintaining and documenting a mature experiment stack."
+            link="https://jarvis.psych.purdue.edu/lab-website/"
           />
         </TimelineItemWrapper>
         <TimelineItem>
