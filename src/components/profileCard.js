@@ -6,12 +6,9 @@ import {
   Card,
   CardActions,
   CardContent,
-  CardMedia,
-  Container,
   IconButton,
   makeStyles,
   Typography,
-  Paper,
 } from "@material-ui/core"
 
 import LinkedInIcon from "@material-ui/icons/LinkedIn"
@@ -21,49 +18,59 @@ import ResumeIcon from "@material-ui/icons/Description"
 
 const useStyles = makeStyles(theme => ({
   card: {
-    maxWidth: 300,
-    position:"relative",
+    maxWidth: 360,
+    minWidth:240,
+    position: "relative",
     borderRadius: theme.spacing(1.5),
-    // margin: "auto",
+    margin:'auto',
   },
   actions: {
     justifyContent: "space-between",
-    position:"absolute",
-    bottom:0,
-    width:"100%",
-    zIndex:10,
+    position: "absolute",
+    bottom: 0,
+    width: "100%",
+    zIndex: 10,
+  },
+  media: {
+    flex: 2,
+  },
+  content: {
+    flex: 3,
+    display:"flex",
+    flexDirection:"column",
+    justifyContent:"space-between",
+  },
+  img: {
+    height: "100%",
+    width: "100%",
   },
 }))
 
-const ProfileCard = ({ imgSrc }) => {
+const ProfileCard = ({ imgSrc, title, children }) => {
   const classes = useStyles()
   return (
-      <Card className={classes.card} variant="outlined">
+    <Card className={classes.card} variant="outlined">
         <CardContent>
-          <Typography variant="h4">Hey there!</Typography>
+          <Typography variant="h4">{title}</Typography>
           <Typography variant="body1">
-            I'm currently looking for a Summer 2021 internship, but hit me up
-            regardless!
+            {children}
           </Typography>
         </CardContent>
-        
         <CardActions className={classes.actions}>
-          <Button endIcon={<ResumeIcon />} variant="outlined" >
+          <Button endIcon={<ResumeIcon />} href="/Resume.pdf" variant="outlined" target="_blank" rel="noopener">
             Resume
           </Button>
           <div>
-            <IconButton>
+            <IconButton href="https://www.linkedin.com/in/kyle-zheng-9b2546145/" target="_blank" rel="noopener">
               <LinkedInIcon />
             </IconButton>
-            <IconButton>
+            <IconButton href="https://github.com/zhengkyl" target="_blank" rel="noopener">
               <GitHubIcon />
             </IconButton>
           </div>
         </CardActions>
-        <CardMedia>
-          <Img fluid={imgSrc} />
-        </CardMedia>
-      </Card>
+        <Img fluid={imgSrc} />
+    </Card>
   )
 }
 export default ProfileCard

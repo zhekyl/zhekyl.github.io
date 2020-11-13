@@ -21,39 +21,50 @@ import {
 } from "@material-ui/core"
 
 const useStyles = makeStyles(theme => ({
-  profiles: {
-    display: "flex",
-    justifyContent: "space-evenly",
-    "& > :last-child": {
-      display: "none",
-      [theme.breakpoints.up("md")]: {
-        display: "unset",
-      },
-    },
-  },
-  navButton: {
-    // backgroundColor:theme.palette.primary.light,
-    // boxShadow:'',
-  },
   highlight: {
     color: theme.palette.primary.main,
   },
+  intro:{
+    marginTop:64,
+    marginBottom:256,
+    display:"flex",
+    flexDirection:"column",
+    justifyContent:"space-between",
+    alignItems:"center",
+    [theme.breakpoints.up("md")]:{
+      flexDirection:"row"
+    }
+  },
+  text:{
+    width:"100%",
+    marginBottom:64,
+    [theme.breakpoints.up("md")]:{
+      width:"unset"
+    }
+  },
+  myCard:{
+    [theme.breakpoints.up("md")]:{
+      marginRight:96,
+      marginLeft:96
+    }
+  }
 }))
 const IndexPage = ({ data }) => {
   const classes = useStyles()
   return (
     <>
       <SEO title="Home" />
-      <div>
-        {/* <Typography variant="h1">Who else?</Typography> */}
-        <Typography variant="h1">Hello there.</Typography>
-        <Typography variant="h3">It's me, Kyle Zheng.</Typography>
-        {/* <ProfileCard imgSrc={data.profile3.childImageSharp.fluid}/> */}
+      <div className={classes.intro}>
+        <div className={classes.text}>
+          <Typography variant="h1">Hello there.</Typography>
+          <Typography variant="h3">It's me, Kyle Zheng.</Typography>
+        </div>
 
-        {/* href="https://github.com/zhengkyl"
-                href="https://devpost.com/zhengkyl"
-
-                href="https://www.linkedin.com/in/kyle-zheng-9b2546145/" */}
+        <div className={classes.myCard}>
+          <ProfileCard imgSrc={data.profile5.childImageSharp.fluid} title="My Info">
+            I'm currently looking for Summer 2021 internships, but feel free to reach out for any reason!
+          </ProfileCard>
+        </div>
       </div>
 
       <QuoteHeader
@@ -61,7 +72,7 @@ const IndexPage = ({ data }) => {
         subtext="😤🔨😤😈"
         id="about"
       />
-      <AboutArea imageSources={data}/>
+      <AboutArea imageSources={data} />
 
       <QuoteHeader
         right
@@ -91,10 +102,9 @@ const IndexPage = ({ data }) => {
         subtext="🙏🙏😔"
         id="resume"
       />
-      <div className={classes.profiles}>
-        <ProfileCard imgSrc={data.profile5.childImageSharp.fluid} />
-        <ProfileCard imgSrc={data.profile4.childImageSharp.fluid} />
-      </div>
+        <ProfileCard imgSrc={data.profile5.childImageSharp.fluid} title="Get in touch" >
+          You can find my most up-to-date contact info on my resume. You can also check out my LinkedIn and Github below.
+        </ProfileCard>
     </>
   )
 }
@@ -168,6 +178,13 @@ export const pageQuery = graphql`
       childImageSharp {
         fluid(maxWidth: 300) {
           ...GatsbyImageSharpFluid_noBase64
+        }
+      }
+    }
+    profile: file(relativePath: { eq: "profile.png" }) {
+      childImageSharp {
+        fixed(width:300) {
+          ...GatsbyImageSharpFixed
         }
       }
     }
