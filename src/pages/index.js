@@ -100,7 +100,7 @@ const IndexPage = ({ data }) => {
       <QuoteHeader
         title="If I could, I'd hire him twice!"
         subtext="🙏🙏😔"
-        id="resume"
+        id="contact"
       />
         <ProfileCard imgSrc={data.profile5.childImageSharp.fluid} title="Get in touch" >
           You can find my most up-to-date contact info on my resume. You can also check out my LinkedIn and Github below.
