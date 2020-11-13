@@ -57,14 +57,14 @@ const ProfileCard = ({ imgSrc, title, children }) => {
           </Typography>
         </CardContent>
         <CardActions className={classes.actions}>
-          <Button endIcon={<ResumeIcon />} href="/Resume.pdf" variant="outlined" target="_blank" rel="noopener">
+          <Button endIcon={<ResumeIcon />} href="/Resume.pdf" variant="contained" target="_blank" rel="noopener" color="primary" disableElevation>
             Resume
           </Button>
           <div>
-            <IconButton href="https://www.linkedin.com/in/kyle-zheng-9b2546145/" target="_blank" rel="noopener">
+            <IconButton href="https://www.linkedin.com/in/kyle-zheng-9b2546145/" target="_blank" rel="noopener" color="primary">
               <LinkedInIcon />
             </IconButton>
-            <IconButton href="https://github.com/zhengkyl" target="_blank" rel="noopener">
+            <IconButton href="https://github.com/zhengkyl" target="_blank" rel="noopener" color="primary">
               <GitHubIcon />
             </IconButton>
           </div>

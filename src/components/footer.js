@@ -19,17 +19,20 @@ import ResumeIcon from "@material-ui/icons/Description"
 
 const useStyles = makeStyles(theme => ({
   footer: {
-    marginTop:128
+    marginTop: 128,
+    marginBottom:theme.spacing(1),
+    textAlign: "right",
   },
-  
 }))
 
-const Footer = ({ imgSrc }) => {
+const Footer = ({}) => {
   const classes = useStyles()
   return (
-    <div className={classes.footer}>
-      made by kyle
-    </div>
+    <Container maxWidth="lg" className={classes.footer}>
+      <Typography variant="subtitle2" component="span">
+        {"© 2020, Made with <3 by Kyle Zheng"}
+      </Typography>
+    </Container>
   )
 }
 export default Footer
