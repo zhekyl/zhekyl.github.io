@@ -42,7 +42,7 @@ const useStyles = makeStyles(theme => ({
 // useStaticQuery has some bugs, so gatsby image queries are being sent down from the parent
 // Hopefully replace with static queries when bugs resolved.
 const ProjectCarousel = ({ imageSources }) => {
-  console.log(imageSources)
+  // console.log(imageSources)
   const classes = useStyles()
   return (
     <CarouselProvider
